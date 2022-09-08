@@ -92,3 +92,41 @@ body {
   background-color: wheat;
   padding: 0.5rem;
 }
+
+/* ---- PÁGINA DE CONTACTO ---- */
+form{
+  width: 450px;
+  margin: auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border-radius: 7px;
+}
+
+h2{
+  text-align: center;
+}
+
+input, textarea{
+  width: 100%;
+  padding: 7px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+textarea{
+  min-height: 100px;
+  max-height: 200px;
+  max-width: 100%;
+}
+
+#boton{
+  background-color: rgb(58, 179, 195);
+  color: white;
+  padding: 20px;
+  font-size: 15px;
+}
+
+#boton:hover {
+  cursor: pointer;
+}
