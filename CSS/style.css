@@ -1,10 +1,10 @@
 :root {
   /* ---- GLOBAL VARIABLES ---- */
-  /* -- Media-Queries Breakpoints -- */
+  /* -- Media-Queries Breakpoints (media-query no acepta variables sin libreria de por medio) -- */
   --media-query-lg: 1200px;
-  --media-query-md: 720px;
+  --media-query-md: 780px; /* Referencia: iPad Mini --> 768px */
   --media-query-sm: 540px;
-  --media-query-xs: 320px;
+  --media-query-xs: 420px; /* Referencia: iPhone XR --> 414px */
 
   /* -- Containers Parameters -- */
   --container-max-width: 1170px;
@@ -36,12 +36,14 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0 1rem;
-  width: var(--container-max-width); /* checkear el width con media-queries */
+  max-width: var(--container-max-width); /* checkear el width con media-queries */
+  width: 90%;
 }
 
 .header-navbar {
   display: flex;
   height: 100%;
+  transition: 0.3s; /* Transición del slide cuando se presiona el burger-btn */
 }
 
 .header-btn {
@@ -55,6 +57,9 @@ body {
   background-color: var(--color-primary);
 }
 
+.header-burger-btn {
+  display: none;
+}
 
 /* ---- MAIN STYLES ---- */
 .main-root {
@@ -66,7 +71,7 @@ body {
 
 .main-container {
   max-width: var(--container-max-width); /* checkear el width con media-queries */
-  width: 100%;
+  width: 90%;
 }
 
 
@@ -122,6 +127,7 @@ body {
 
 .slide-image {
   align-self: center;
+  min-height: 400px; /* Chequear altura con el tamaño de fuente final */
   position: relative;
   width: 100%;
   z-index: 0;
@@ -130,13 +136,14 @@ body {
 .slide-overlay {
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
-  left: 45%;
+  left: 40%;
   padding: 5%;
   position: absolute;
   z-index: 1;
   right: 0;
   top: 0;
   bottom: 0;
+  transition: 0.2s;
 }
 
 .slide-btn {
@@ -174,7 +181,7 @@ body {
   width: var(--container-max-width); /* checkear el width con media-queries */
 }
 
-.footer-btn{
+.footer-btn {
   background-color: wheat;
   padding: 0.5rem;
 }
@@ -215,4 +222,44 @@ textarea{
 
 #boton:hover {
   cursor: pointer;
+}
+
+
+/* ---- MEDIA QUERIES ---- */
+@media (max-width: 780px) {
+  /* -- BURGER MENU -- */
+  /* Ver si no es conveniente crear un navbar separado en lugar de modificar el existente */
+  .header-navbar {
+    display: none; /* BORRAR este atributo cuando el componente funcione correctamente */
+    background-color: rgba(255, 255, 255, 0.8);
+    flex-direction: column;
+    height: 240px;
+    max-width: 300px;
+    position: absolute;
+    right: -300px; /* right === width + border-width * 2 */
+    top: 54px;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .header-navbar.active {
+    right: 0;
+  }
+
+  .header-burger-btn {
+    display: block;
+  }
+
+  /* -- SLIDER -- */
+  .slide-overlay {
+    left: 25%;
+  }
+}
+
+@media (max-width: 540px) {
+  /* -- SLIDER -- */
+  .slide-overlay {
+    left: 0%;
+    top: 25%;
+  }
 }
