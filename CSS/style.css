@@ -77,6 +77,7 @@ body {
 
 /* ---- HOME-SLIDER STYLES ---- */
 .slider-container {
+  border-radius: 8px;
   background-color: gray;
   display: flex;
   max-height: 500px;
@@ -134,6 +135,7 @@ body {
 }
 
 .slide-overlay {
+  backdrop-filter: blur(4px);
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
   left: 40%;
@@ -186,11 +188,69 @@ body {
   padding: 0.5rem;
 }
 
+
+/* ---- PAQUETES - FILTRO ---- */
+/* Este conentedor coliciona con los estilos del form de la página contacto */
+.filter-form {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: var(--media-query-lg);
+  width: 100%;
+}
+
+/* ---- PAQUETES - CONTAINER ---- */
+.card-grid-container {
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: auto auto auto auto; /* Settear las columnas con media-queries */
+}
+
+/* ---- PAQUETES - CARD ---- */
+.card-container {
+  border-bottom: 3px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 360px;
+  padding: 15px;
+  transition: 0.30s;
+  width: -webkit-fill-available; /* Verificar la implementacion de multiples vendedores */
+  width: -moz-available;
+}
+
+.card-container:hover {
+  box-shadow: 0px 5px 30px 5px rgba(0,0,0,0.10);
+  transform: scale(1.005);
+}
+
+.card-img-container {
+  background-color: gray;
+  margin-bottom: 1rem;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.card-img {
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.card-container, p {
+  margin: 0.5rem 0;
+}
+
 /* ---- PÁGINA DE CONTACTO ---- */
+/* Este conentedor coliciona con los estilos del form de la página paquetes */
 form{
-  width: 450px;
+  max-width: 450px;
   margin: auto;
-  padding: 10px 20px;
+  padding: 10px;
   box-sizing: border-box;
   margin-top: 20px;
   border-radius: 7px;
