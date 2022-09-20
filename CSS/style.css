@@ -17,6 +17,10 @@
   --color-tertiary: green;
 }
 
+html{
+  font-family: 'Rubik', sans-serif;
+}
+
 body {
   height: 100%;
   margin: 0;
@@ -235,6 +239,7 @@ body {
 .footer-btn {
   background-color: wheat;
   padding: 0.5rem;
+  text-decoration: none;
 }
 
 

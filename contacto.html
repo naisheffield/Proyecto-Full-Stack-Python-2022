@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style.css">
     <script src="https://kit.fontawesome.com/523c5c29a5.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="../Multimedia/favicon_globo.png" />
-    <title>Organizá tu viaje</title>
+    <link rel="shortcut icon" href="/Multimedia/favicon_globo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Contactanos</title>
 </head>
 <body>
   <header class="header-root">
@@ -16,7 +19,7 @@
       <nav class="header-navbar active">
         <a class="header-btn" href="./index.html">Inicio</a>
         <a class="header-btn" href="./paquetes.html">Paquetes</a>
-        <a class="header-btn" href="./arma_tu_viaje.html">Armá tu viaje</a>
+        <a class="header-btn" href="./arma-tu-viaje.html">Armá tu viaje</a>
         <a class="header-btn" href="./contacto.html">Contacto</a>
         <a class="header-cart-btn" href="./checkout.html">
           <img id="empty-cart-icon" src="/Multimedia/carrito-vacio.png" alt="carrito">
@@ -29,7 +32,19 @@
   <main class="main-root">
     <div class="main-container">
       <section>
-        <h2>ARMA TU VIAJE!</h2>
+        <form action="Link" method="post">
+          <h2>Envianos tu mensaje</h2>
+          <input type="text" name="nombre" placeholder="Nombre"> <br> <br>
+          <input type="text" name="apellido" placeholder="Apellido"> <br> <br>
+          <input type="email" name="email" placeholder="Email"> <br> <br>
+          <input type="text" name="pais" placeholder="País"> <br> <br>
+          <input type="number" name="telefono" placeholder="Teléfono"> <br> <br>
+          <textarea name="consulta" placeholder="Escriba aquí su consulta" id="consulta"></textarea>
+    
+          <br> <br>
+    
+          <input type="submit" value="Enviar" id="boton">
+        </form> 
       </section>
     </div>
   </main>
