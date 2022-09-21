@@ -256,8 +256,9 @@ body {
 /* ---- PAQUETES - CONTAINER ---- */
 .card-grid-container {
   display: grid;
-  gap: 0.2rem;
-  grid-template-columns: auto auto auto auto; /* Settear las columnas con media-queries */
+  gap: 1.3333%;
+  grid-template-columns: 24% 24% 24% 24%; /* Settear las columnas con media-queries */
+  /* grid-column: auto; */
 }
 
 /* ---- PAQUETES - CARD ---- */
@@ -448,6 +449,12 @@ textarea{
 
 /* ---- MEDIA QUERIES ---- */
 @media (max-width: 1200px) {
+  /* ---- PÄQUETES ---- */
+  .card-grid-container {
+    gap: 0.5%;
+    grid-template-columns: 33% 33% 33%;
+  }
+  
   /* ---- PAGINA CAJA/CHECKOUT STYLES ---- */
   .cart-item-container {
     flex-direction: column;
@@ -468,6 +475,12 @@ textarea{
 }
 
 @media (max-width: 780px) {
+  /* ---- PÄQUETES ---- */
+  .card-grid-container {
+    gap: 2%;
+    grid-template-columns: 49% 49%;
+  }
+
   /* -- BURGER MENU -- */
   /* Ver si no es conveniente crear un navbar separado en lugar de modificar el existente */
   .header-navbar {
@@ -512,6 +525,13 @@ textarea{
 }
 
 @media (max-width: 540px) {
+  /* ---- PÄQUETES ---- */
+   .card-grid-container {
+    gap: 1rem;
+    grid-template-columns: 100%;
+    justify-items: center;
+  }
+
   /* -- SLIDER -- */
   .slide-overlay {
     left: 0%;
