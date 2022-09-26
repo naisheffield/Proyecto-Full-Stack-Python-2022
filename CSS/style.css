@@ -409,33 +409,34 @@ body {
 
 /* ---- PÁGINA DE CONTACTO ---- */
 /* Este conentedor coliciona con los estilos del form de la página paquetes */
-form{
+.contact-form {
   max-width: 450px;
   margin: auto;
   padding: 10px;
   box-sizing: border-box;
   margin-top: 20px;
   border-radius: 7px;
+  background-color: aliceblue;
 }
 
 h2{
   text-align: center;
 }
 
-input, textarea{
+input, textarea {
   width: 100%;
   padding: 7px;
   box-sizing: border-box;
   font-size: 14px;
 }
 
-textarea{
+textarea {
   min-height: 100px;
   max-height: 200px;
   max-width: 100%;
 }
 
-#boton{
+#boton {
   background-color: rgb(58, 179, 195);
   color: white;
   padding: 20px;
@@ -444,6 +445,88 @@ textarea{
 
 #boton:hover {
   cursor: pointer;
+}
+
+/* ---- PÁGINA DE ARMÁ TU VIAJE ---- */
+.main-container-travel{
+  position:relative;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 30px;
+  margin: 0 5px 10px;
+}
+
+.main-container-travel form{
+  position:relative;
+  margin-top: 16px;
+  min-height: 490px;
+  background-color: aliceblue;
+  border-radius: 1% ;
+  padding: 10px;
+
+}
+
+.main-container-travel form .titulo{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+  background-color: rgb(131, 195, 203);
+  font-weight: 600;
+}
+
+.main-container-travel .fields{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+form .fields .input-field{
+  display: flex;
+  width: calc(100% / 3 -15px);
+  flex-direction: column;
+  margin: 4px 0;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  width: 14rem;
+  margin: 0.5rem;
+}
+
+.input-field label{
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.input-field input {
+  outline: none;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  border: 1px solid;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+
+.input-field select {
+  height: 2.6rem;
+  padding-left: 0.5rem;
+  bottom: 2px solid;
+  margin: 8px 0;
+  font-size: 15px;
+  font-style: italic;
+}
+
+input[type=radio] {
+  border: 0px;
+  width:20% ;
+  height: 15px;
 }
 
 
