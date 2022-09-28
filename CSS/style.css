@@ -1,0 +1,623 @@
+:root {
+  /* ---- GLOBAL VARIABLES ---- */
+  /* -- Media-Queries Breakpoints (media-query no acepta variables sin libreria de por medio) -- */
+  --media-query-lg: 1200px;
+  --media-query-md: 780px; /* Referencia: iPad Mini --> 768px */
+  --media-query-sm: 540px;
+  --media-query-xs: 420px; /* Referencia: iPhone XR --> 414px */
+
+  /* -- Containers Parameters -- */
+  --container-max-width: 1170px;
+  --header-height: 54px;
+  --footer-height: 54px;
+
+  /* -- Theme Color Scheme -- */
+  --color-primary: red;
+  --color-secondary: blue;
+  --color-tertiary: green;
+}
+
+html{
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+/* ---- HEADER STYLES ---- */
+.header-root {
+  border-bottom: 1px solid var(--color-secondary);
+  display: flex;
+  height: var(--header-height);
+  justify-content: center;
+}
+
+.header-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem;
+  max-width: var(--container-max-width); /* checkear el width con media-queries */
+  width: 90%;
+}
+
+.header-navbar {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  transition: 0.3s; /* Transición del slide cuando se presiona el burger-btn */
+}
+
+.header-btn {
+  align-items: center;
+  display: flex;
+  padding: 0 0.5rem;
+  text-decoration: none;
+}
+
+.header-btn:hover {
+  background-color: var(--color-primary);
+}
+
+.header-burger-btn {
+  display: none;
+}
+
+.header-cart-btn {
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  padding: 4px;
+  position: relative;
+  transition: 0.1s;
+  width: 36px;
+}
+
+.header-cart-btn img {
+  max-width: 70%;
+  height: auto;
+  transition: 0.2s;
+}
+
+.header-cart-btn:hover {
+  background-color: rgb(230, 230, 230);
+}
+.header-cart-btn:active {
+  background-color: var(--color-secondary);
+}
+
+.header-cart-btn:active img {
+  filter: invert();
+}
+
+.header-cart-counter {
+  align-items: center;
+  background-color: red;
+  border-radius: 12px;
+  bottom: -10px;
+  color: white;
+  display: none;
+  font-weight: bold;
+  height: 24px;
+  justify-content: center;
+  position: absolute;
+  right: -10px;
+  width: 24px;
+  z-index: 5;
+}
+
+/* ---- MAIN STYLES ---- */
+.main-root {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 2px);
+  /* NOTA: los 2px son de los bordes solidos del header y el footer (1px cada uno) */
+}
+
+.main-container {
+  max-width: var(--container-max-width); /* checkear el width con media-queries */
+  width: 90%;
+}
+
+
+/* ---- HOME-SLIDER STYLES ---- */
+.slider-container {
+  border-radius: 8px;
+  background-color: gray;
+  display: flex;
+  max-height: 500px;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+}
+
+.slider-nav {
+  bottom: 24px;
+  cursor: pointer;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  z-index: 3;
+}
+
+.slider-nav-btn {
+  border-radius: 50%;
+  border: 1px solid white;
+  height: 12px;
+  margin: 0 6px;
+  transition: 0.075s;
+  width: 12px;
+}
+
+.slider-nav-btn:hover {
+  background-color: rgba(255, 255,255, 0.4);
+}
+
+.slider-nav-btn:active {
+  background-color: white;
+}
+
+.slider-nav-btn.active {
+  background-color: white;
+}
+
+.slide {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.slide-image {
+  align-self: center;
+  min-height: 400px; /* Chequear altura con el tamaño de fuente final */
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+.slide-overlay {
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  left: 40%;
+  padding: 5%;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: 0.2s;
+}
+
+.slide-btn {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem;
+  transition: 0.4s;
+}
+
+.slide-btn:hover {
+  background-color: white;
+  color: rgb(20, 20, 20);
+}
+
+/* ---- FOOTER STYLES ---- */
+.footer-root {
+  border-top: 1px solid var(--color-secondary);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  height: var(--footer-height);
+  position: relative;
+  width: 100%;
+}
+
+.footer-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem;
+  width: var(--container-max-width); /* checkear el width con media-queries */
+}
+
+.footer-btn {
+  background-color: wheat;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+
+/* ---- PAQUETES - FILTRO ---- */
+/* Este conentedor coliciona con los estilos del form de la página contacto */
+.filter-form {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: var(--media-query-lg);
+  width: 100%;
+}
+
+/* ---- PAQUETES - CONTAINER ---- */
+.card-grid-container {
+  display: grid;
+  gap: 1.3333%;
+  grid-template-columns: 24% 24% 24% 24%; /* Settear las columnas con media-queries */
+  /* grid-column: auto; */
+}
+
+/* ---- PAQUETES - CARD ---- */
+.card-container {
+  border-bottom: 3px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 360px;
+  padding: 15px;
+  transition: 0.30s;
+  width: -webkit-fill-available; /* Verificar la implementacion de multiples vendedores */
+  width: -moz-available;
+}
+
+.card-container:hover {
+  box-shadow: 0px 5px 30px 5px rgba(0,0,0,0.10);
+  transform: scale(1.005);
+}
+
+.card-img-container {
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.card-img {
+  border-radius: 8px;
+  position: absolute;
+  height: 100%;
+}
+
+.card-container, p {
+  margin: 0.5rem 0;
+}
+
+
+/* ---- PAGINA CAJA/CHECKOUT STYLES ---- */
+.cart-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: auto 320px;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cart-sidebar-container {
+  position: relative;
+}
+
+/* -- SIDEBAR STYLES -- */
+.cart-sidebar {
+  position: fixed;
+}
+
+.cart-sidebar-title{
+  font-size: 1.1rem;
+  margin: 0 0 1.2rem 0;
+}
+
+.cart-sidebar-item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.2rem;
+  text-align: end;
+}
+
+.cart-sidebar-item span {
+  max-width: 60%;
+}
+
+.cart-sidebar-subtotal {
+  border-top: 1px solid gray;
+  display: flex;
+  font-size: 1.05rem;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+}
+
+.cart-sidebar-btn {
+  background-color: rgb(0, 116, 228); /* Cambiar por color principal */
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1rem;
+  transition: 0.2s;
+  width: 100%;
+}
+
+.cart-sidebar-btn:hover {
+  filter: brightness(1.2);
+}
+
+/* -- ITEM LIST STYLES -- */
+.cart-item-container {
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 15px;
+  display: flex;
+  margin-bottom: 1rem;
+  max-height: 360px;
+  transition: 0.2s;
+  width: 100%;
+}
+
+.cart-item-container:hover {
+  box-shadow: 0px 5px 30px 5px rgba(0,0,0,0.10);
+}
+
+.img-container {
+  align-items: center;
+  border-start-start-radius: 15px;
+  border-end-start-radius: 15px;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  min-width: 240px;
+}
+
+.item-info-container {
+  margin: 1.5rem;
+  width: -webkit-fill-available; /* Verificar la implementacion de multiples vendedores */
+  width: -moz-available;
+}
+
+.item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* ---- PÁGINA DE CONTACTO ---- */
+/* Este conentedor coliciona con los estilos del form de la página paquetes */
+.contact-form {
+  max-width: 450px;
+  margin: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border-radius: 7px;
+  background-color: aliceblue;
+}
+
+h2{
+  text-align: center;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 7px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 100px;
+  max-height: 200px;
+  max-width: 100%;
+}
+
+#boton {
+  background-color: rgb(58, 179, 195);
+  color: white;
+  padding: 20px;
+  font-size: 15px;
+}
+
+#boton:hover {
+  cursor: pointer;
+}
+
+/* ---- PÁGINA DE ARMÁ TU VIAJE ---- */
+.main-container-travel{
+  position:relative;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 30px;
+  margin: 0 5px 10px;
+}
+
+.main-container-travel form{
+  position:relative;
+  margin-top: 16px;
+  min-height: 490px;
+  background-color: aliceblue;
+  border-radius: 1% ;
+  padding: 10px;
+
+}
+
+.main-container-travel form .titulo{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+  background-color: rgb(131, 195, 203);
+  font-weight: 600;
+}
+
+.main-container-travel .fields{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+form .fields .input-field{
+  display: flex;
+  width: calc(100% / 3 -15px);
+  flex-direction: column;
+  margin: 4px 0;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  width: 14rem;
+  margin: 0.5rem;
+}
+
+.input-field label{
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.input-field input {
+  outline: none;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  border: 1px solid;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+
+.input-field select {
+  height: 2.6rem;
+  padding-left: 0.5rem;
+  bottom: 2px solid;
+  margin: 8px 0;
+  font-size: 15px;
+  font-style: italic;
+}
+
+input[type=radio] {
+  border: 0px;
+  width:20% ;
+  height: 15px;
+}
+
+
+/* ---- MEDIA QUERIES ---- */
+@media (max-width: 1200px) {
+  /* ---- PÄQUETES ---- */
+  .card-grid-container {
+    gap: 0.5%;
+    grid-template-columns: 33% 33% 33%;
+  }
+  
+  /* ---- PAGINA CAJA/CHECKOUT STYLES ---- */
+  .cart-item-container {
+    flex-direction: column;
+    max-height: 540px;
+  }
+
+  .img-container {
+    height: 360px;
+    align-items: center;
+    border-start-end-radius: 15px;
+    border-end-start-radius: 0px;
+  }
+
+  .img-container .card-img {
+    width: 100%;
+    height: auto;
+  }  
+}
+
+@media (max-width: 780px) {
+  /* ---- PÄQUETES ---- */
+  .card-grid-container {
+    gap: 2%;
+    grid-template-columns: 49% 49%;
+  }
+
+  /* -- BURGER MENU -- */
+  /* Ver si no es conveniente crear un navbar separado en lugar de modificar el existente */
+  .header-navbar {
+    align-items: flex-start;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.8);
+    flex-direction: column;
+    height: 240px;
+    max-width: 300px;
+    position: absolute;
+    right: -300px; /* right === width + border-width * 2 */
+    top: 54px;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .header-navbar.active {
+    right: 0;
+  }
+
+  .header-burger-btn {
+    display: block;
+  }
+
+  /* -- SLIDER -- */
+  .slide-overlay {
+    left: 25%;
+  }
+
+  /* -- CARRITO -- */
+  .cart-sidebar {
+    position: static;
+  }
+  
+  .cart-container {
+    grid-template-columns: auto;
+  }
+
+  .item-title {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 540px) {
+  /* ---- PÄQUETES ---- */
+   .card-grid-container {
+    gap: 1rem;
+    grid-template-columns: 100%;
+    justify-items: center;
+  }
+
+  /* -- SLIDER -- */
+  .slide-overlay {
+    left: 0%;
+    top: 25%;
+  }
+}
