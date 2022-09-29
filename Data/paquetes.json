@@ -1,0 +1,91 @@
+{
+  "paquetes": [
+    {
+      "id": "id del paquete (tipo number)",
+      "nombre": "nombre del paquete",
+      "servicios": [
+        "servicio-01",
+        "servicio-02",
+        "servicio-03",
+        "servicio-04",
+        "servicio-05"
+      ],
+      "descripcion": [
+        ["dia-01-ubicacion", "descripcion del servicio de la fecha"],
+        ["dia-02-ubicacion", "descripcion del servicio de la fecha"],
+        ["dia-03-ubicacion", "descripcion del servicio de la fecha"],
+        ["dia-04-ubicacion", "descripcion del servicio de la fecha"]
+      ],
+      "destino": {
+        "ciudad": "nombre de la ciudad",
+        "pais": "nombre del pais/región",
+        "continente": "nombre del continente"
+      },
+      "precio": "precio total del paquete en dolares (U$S)",
+      "ubicacion": "coordenadas del destino para geolocalizacion",
+      "duracion": {
+        "dias": "cantidad de dias (tipo number)",
+        "noches": "cantidad de dias (tipo number)",
+        "total": "duracion total del viaje (tipo number)"
+      },
+      "fecha": "fecha del proximo viaje (tipo date)",
+      "review": {
+        "promedio": "puntaje promedio (5 puntos - tipo number)",
+        "cantidad": "cantidad de reviews (tipo number)"
+      },
+      "imagenes": [
+        "#",
+        "url-imagen-02",
+        "url-imagen-03",
+        "url-imagen-04"
+      ]
+    },
+    {
+      "id": "123456789",
+      "nombre": "Las Maldivas - Noviembre",
+      "servicios": [
+        "Pasajes aéreos internacionales",
+        "Traslados de llegada y salida",
+        "Alojamiento en categoría turista",
+        "Desayuno diario",
+        "Guía de habla hispana durante todo el recorrido",
+        "Visitas según itinerario"
+      ],
+      "descripcion": [
+        ["7 de Noviembre - Ezeiza, Buenos Aires, Argentina", "Salida del Aeropuerto Internacional de Ezeiza en vuelo hacia destino"],
+        ["8 de Noviembre - Malé, Maldivas", "Desayuno y visita panorámica de la capital de Maldivas. Tarde libre para actividades personales. A las 15.30 hrs traslado al puerto para embarcar en el crucero Silja Line que dispone de 3 restaurantes, club nocturno, discoteca y tiendas libres de impuestos. Durante la travesía se pasa por un hermoso archipiélago de más de 2.000 islas que se extiende a lo largo de la costa. Alojamiento en camarotes dobles exteriores de la categoría A."],
+        ["9 de Noviembre - Malé, Maldivas", "Desayuno bufet a bordo y desembarque a las 9.40 hrs. A continuación visita panorámica de la costa de Malé. Alojamiento en el Hotel. "],
+        ["10 de Noviembre - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["11 de Noviembre - Malé, Maldivas", "Desayuno y salida hacia la isla Filitheyo. Recorreremos los impresionantes paisajes del archipiélago. Alojamiento en Hotel de lujo."],
+        ["12 de Noviembre - Filitheyo, Maldivas", "Salida por la mañana hacia Borgund pasando por las encantadoras localidades enclavadas en un bellísimo paisaje isleño. Práctica de actividades marinas. Alojamiento en Hotel de lujo."],
+        ["13 de Noviembre - Filitheyo, Maldivas", "Desayuno y partida hacia Malé a las 09.45 hrs. Desembarque y visita de la ciudad, recorriendo los principales monumentos y lugares históricos, tal como la Plaza del Ayuntamiento, el Museo Nacional, y el edificio de la Bolsa. Alojamiento en el Hotel."],
+        ["14 de Noviembre - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["15 de Noviembre - Malé, Maldivas", "Desayuno. A la hora a indicar traslado al aeropuerto, salida en vuelo de regreso"],
+        ["16 de Noviembre - Ezeiza, Buenos Aires, Argentina", "Retorno al Aeropuerto Internacional de Ezeiza en vuelo desde destino"]
+      ],
+      "destino": {
+        "ciudad": "Malé",
+        "pais": "Maldivas",
+        "continente": "Asia"
+      },
+      "precio": "5000",
+      "ubicacion": "4°10′30″N 73°30′30″E",
+      "duracion": {
+        "dias": "8",
+        "noches": "7",
+        "total": "10"
+      },
+      "fecha": "08-11-2022",
+      "review": {
+        "promedio": "4.67",
+        "cantidad": "22"
+      },
+      "imagenes": [
+        "https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg",
+        "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg",
+        "https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg",
+        "https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg"
+      ]
+    }
+  ]
+}
