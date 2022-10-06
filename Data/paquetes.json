@@ -28,7 +28,10 @@
         "noches": "cantidad de dias (tipo number)",
         "total": "duracion total del viaje (tipo number)"
       },
-      "fecha": "fecha del proximo viaje (tipo date)",
+      "fecha": {
+        "sinFormato": "dd-mm-yyyy",
+        "conFormato": "(fecha) de (mes) de (año)"
+      },
       "review": {
         "promedio": "puntaje promedio (5 puntos - tipo number)",
         "cantidad": "cantidad de reviews (tipo number)"
@@ -75,7 +78,10 @@
         "noches": "7",
         "total": "10"
       },
-      "fecha": "08-11-2022",
+      "fecha": {
+        "sinFormato": "08-11-2022",
+        "conFormato": "8 de Noviembre de 2022"
+      },
       "review": {
         "promedio": "4.67",
         "cantidad": "22"
