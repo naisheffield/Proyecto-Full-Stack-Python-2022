@@ -18,13 +18,15 @@ class PaqueteCard {
 
     cardContenedor.innerHTML = `
       <div class="card-img-container">
-        <img class="card-img" src="${this.imageURL}" alt="${this.destino.ciudad}-image">
+        <img class="card-img" src="${this.imageURL}" alt="imagen de ${this.destino.pais}">
       </div>
-      <p>${this.nombre}</p>
-      <p>${this.destino.ciudad} | ${this.destino.pais} | ${this.destino.continente}</p>
-      <p>${this.duracion.dias} días | ${this.duracion.noches} noches</p>
-      <p>${this.review.promedio} | ${this.review.cantidad} reviews</p>
-      <p>${this.precio} U$S + impuestos</p>
+      <div class="card-info-container">
+        <p>${this.nombre}</p>
+        <p>${this.destino.ciudad} | ${this.destino.pais} | ${this.destino.continente}</p>
+        <p>${this.duracion.dias} días | ${this.duracion.noches} noches</p>
+        <p>${this.review.promedio} | ${this.review.cantidad} reviews</p>
+        <p>${this.precio} U$S + impuestos</p>
+      </div>
     `;
 
     return cardContenedor;
