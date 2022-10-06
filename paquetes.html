@@ -13,11 +13,11 @@
     <title>Paquetes</title>
 </head>
 <body>
-  <header class="header-root">
+  <header id="header" class="header-root">
     <div class="header-container">
       <h1>TuriMundo</h1>
       <nav class="header-navbar active">
-        <a class="header-btn" href="./index.html">Inicio</a>
+        <a id="inicio" class="header-btn" href="./index.html">Inicio</a>
         <a class="header-btn" href="./paquetes.html">Paquetes</a>
         <a class="header-btn" href="./arma-tu-viaje.html">Armá tu viaje</a>
         <a class="header-btn" href="./contacto.html">Contacto</a>
@@ -29,9 +29,9 @@
       <button class="header-burger-btn">MENU</button>
     </div>
   </header>
-  <main class="main-root">
+  <main class="main-root main-pack-details">
     <div class="main-container">
-      <section>
+      <section id="packs-list" class="pack-list-section">
         <h2>PAQUETES</h2>
         <div class="filter-container">
           <h3>FILTROS</h3>
@@ -133,7 +133,9 @@
           </div>
            -->
         </div>
+        <div id="mensaje"></div>
       </section>
+      <section id="pack-details" class="pack-details-section"></section>
     </div>
   </main>
   <footer class="footer-root">
