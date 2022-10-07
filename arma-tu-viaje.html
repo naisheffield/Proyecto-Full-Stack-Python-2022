@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/523c5c29a5.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/Multimedia/favicon_globo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Organizá tu viaje</title>
+</head>
+<body>
+  <header class="header-root">
+    <div class="header-container">
+      <h1>TuriMundo</h1>
+      <nav class="header-navbar active">
+        <a class="header-btn" href="./index.html">Inicio</a>
+        <a class="header-btn" href="./paquetes.html">Paquetes</a>
+        <a class="header-btn" href="./arma-tu-viaje.html">Armá tu viaje</a>
+        <a class="header-btn" href="./contacto.html">Contacto</a>
+        <a class="header-cart-btn" href="./checkout.html">
+          <img id="empty-cart-icon" src="/Multimedia/carrito-vacio.png" alt="carrito">
+          <div class="header-cart-counter"></div>
+        </a>
+      </nav>
+      <button class="header-burger-btn">MENU</button>
+    </div>
+  </header>
+  <main class="main-root">
+    <div class="main-container-travel">
+        <h2>ARMA TU VIAJE!</h2>
+
+        <form>
+          <div class="titulo">Datos del solicitante</div>
+          <div class="fields">
+            <div class="input-field">
+              <label>Nombre completo</label>
+              <input type="text" name="nombre" required placeholder="Nombre y Apellido">
+            </div>  
+            <div class="input-field">
+              <label>Email</label>
+              <input type="email" name="email" required placeholder="Email">
+            </div>
+            <div class="input-field">
+              <label>Teléfono</label>
+              <input type="number" name="telefono" required placeholder="Teléfono">
+            </div>
+          </div>  
+
+          <div class="titulo">Personas que viajan</div>
+          <div class="fields">
+            <div class="input-field">
+              <label>Adultos</label>
+              <select>
+                <option>0 Adultos</option>
+                <option>1 Adulto</option>
+                <option>2 Adultos</option>
+                <option>3 Adultos</option>
+                <option>4 Adultos</option>
+                <option>5 Adultos</option>
+                <option>6 Adultos</option>
+                <option>7 Adultos</option>
+                <option>8 Adultos</option>
+                <option>9 Adultos</option>
+                <option>10 Adultos</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label>Menores</label>
+              <select>
+                <option>0 Menores</option>
+                <option>1 Menor</option>
+                <option>2 Menores</option>
+                <option>3 Menores</option>
+                <option>4 Menores</option>
+                <option>5 Menores</option>
+                <option>6 Menores</option>
+                <option>7 Menores</option>
+                <option>8 Menores</option>
+                <option>9 Menores</option>
+                <option>10 Menores</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label>Bebes</label>
+              <select>
+                <option>0 Bebes</option>
+                <option>1 Bebe</option>
+                <option>2 Bebes</option>
+                <option>3 Bebes</option>
+                <option>4 Bebes</option>
+                <option>5 Bebes</option>
+                <option>6 Bebes</option>
+                <option>7 Bebes</option>
+                <option>8 Bebes</option>
+                <option>9 Bebes</option>
+                <option>10 Bebes</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="titulo">Destino</div>
+          <div class="fields">
+            <div class="input-field">
+              <label>Ciudad de destino</label>
+              <input type="text" name="destino" required placeholder="Ciudad de destino">
+            </div>
+            <div class="input-field">
+              <label>Fecha de partida</label>
+              <input type="date" name="fecha de partida">
+            </div>
+            <div class="input-field">
+              <label>Fecha de regreso</label>
+              <input type="date" name="fecha de regreso">
+            </div>
+          </div>  
+
+          <div class="titulo">Hotel</div>
+          <div class="fields">
+            <div class="input-field">
+              <label>¿Incluir hotel?</label>
+              <div><input type="radio" name="hotel" value="Si">Si</div>
+              <div><input type="radio" name="hotel" value="No">No</div>
+            </div>
+            <div class="input-field">
+              <label>Categoría</label>
+              <select name="categoría" id="">
+                <option selected>No indicado</option>
+                <option>1 Estrella</option>
+                <option>2 Estrellas</option>
+                <option>3 Estrellas</option>
+                <option>4 Estrellas</option>
+                <option>5 Estrellas</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="titulo">Tipo de Paquete</div>
+          <div class="fields">
+            <div class="input-field">
+              <label>Tipo de Paquete</label>
+              <select name="paquete" id="">
+                <option selected>No indicado</option>
+                <option>Aéreo</option>
+                <option>Terrestre</option>
+                <option>Aéreo + Terrestre</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label>Comidas especiales</label>
+              <input type="text" name="comidas" required placeholder="Comidas especiales">
+            </div>
+            <div class="input-field">
+              <label>Presupuesto por persona</label>
+              <input type="number" name="presupuesto" required placeholder="$ Presupuesto">
+            </div>
+          </div>
+
+          <input type="submit" value="Enviar" id="boton">
+
+          
+        </form>
+
+    </div>
+    
+  </main>
+  <footer class="footer-root">
+    <div class="footer-container">
+      <p>TuriMundo</p>
+      <nav class="footer-navbar">
+        <a class="footer-btn" href="https://twitter.com/?lang=es"><i class="fa-brands fa-twitter"></i></a>
+        <a class="footer-btn" href="https://es-la.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="footer-btn" href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

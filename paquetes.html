@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/523c5c29a5.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/Multimedia/favicon_globo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Paquetes</title>
+</head>
+<body>
+  <header class="header-root">
+    <div class="header-container">
+      <h1>TuriMundo</h1>
+      <nav class="header-navbar active">
+        <a class="header-btn" href="./index.html">Inicio</a>
+        <a class="header-btn" href="./paquetes.html">Paquetes</a>
+        <a class="header-btn" href="./arma-tu-viaje.html">Armá tu viaje</a>
+        <a class="header-btn" href="./contacto.html">Contacto</a>
+        <a class="header-cart-btn" href="./checkout.html">
+          <img id="empty-cart-icon" src="/Multimedia/carrito-vacio.png" alt="carrito">
+          <div class="header-cart-counter"></div>
+        </a>
+      </nav>
+      <button class="header-burger-btn">MENU</button>
+    </div>
+  </header>
+  <main class="main-root">
+    <div class="main-container">
+      <section>
+        <h2>PAQUETES</h2>
+        <div class="filter-container">
+          <h3>FILTROS</h3>
+          <form class="filter-form" action="#">
+            <label for="duracion">Duración</label>
+            <select name="duracion" id="duracion">
+              <option value="7">Hasta 7 días</option>
+              <option value="14">Hasta 14 días</option>
+              <option value="21">Hasta 21 días</option>
+              <option value="28">Hasta 28 días</option>
+            </select>
+            <label for="continente">Ubicación</label>
+            <select name="continente" id="continente">
+              <option value="Norteamérica">Norteamérica y Centroamérica</option>
+              <option value="Sudamérica">Sudamérica</option>
+              <option value="Europa">Europa</option>
+              <option value="Oceanía">Oceanía</option>
+              <option value="Asia">Asia</option>
+            </select>
+            <label for="precio">Precio</label>
+            <select name="precio" id="precio">
+              <option value="ascendente">Ordenar por menor precio</option>
+              <option value="descendente">Ordenar por mayor precio</option>
+            </select>
+            <label for="reviews">Calificación</label>
+            <select name="reviews" id="reviews">
+              <option value="descendente">Ordenar por mejor calificación</option>
+              <option value="ascendente">Ordenar por peor calificación</option>
+            </select>
+            <input type="submit" id="submit-filter-btn">
+          </form>
+        </div>
+        <div class="card-grid-container">
+          <!-- Maldivas -->
+          <div class="card-container">
+            <div class="card-img-container">
+              <img class="card-img" src="https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg" alt="card image">
+            </div>
+            <p>Las Maldivas - Noviembre</p>
+            <p>Malé | Maldivas | Sur asiático</p>
+            <p>8 días | 7 noches</p>
+            <p>4.67 | 22 reviews</p>
+            <p>5000 U$S + impuestos</p>
+          </div>
+          <!-- Canada -->
+          <div class="card-container">
+            <div class="card-img-container">
+              <img class="card-img" src="/Multimedia/imagenes/canada2.jpg" alt="card image">
+            </div>
+            <p>Canadá - Octubre</p>
+            <p>Alberta y Toronto | Canadá | Norteamérica</p>
+            <p>12 días | 11 noches</p>
+            <p>4.37 | 28 reviews</p>
+            <p>12000 U$S + impuestos</p>
+          </div>
+          <!-- Machu-Picchu -->
+          <div class="card-container">
+            <div class="card-img-container">
+              <img class="card-img" src="/Multimedia/imagenes/machu-picchu2.jpg" alt="card image">
+            </div>
+            <p>Ruinas de Machu Picchu - Noviembre</p>
+            <p>Machu Picchu | Perú | Sudamérica</p>
+            <p>8 días | 7 noches</p>
+            <p>4.72 | 15 reviews</p>
+            <p>8000 U$S + impuestos</p>
+          </div>
+          <!-- Bora Bora  -->
+          <div class="card-container">
+            <div class="card-img-container">
+              <img class="card-img" src="/Multimedia/imagenes/bora-bora2.jpg" alt="card image">
+            </div>
+            <p>Bora Bora - Noviembre</p>
+            <p>Bora Bora | Polinesia Francesa | Oceanía</p>
+            <p>10 días | 9 noches</p>
+            <p>4.88 | 10 reviews</p>
+            <p>15000 U$S + impuestos</p>
+          </div>
+          <!-- Venecia y Roma  -->
+          <div class="card-container">
+            <div class="card-img-container">
+              <img class="card-img" src="/Multimedia/imagenes/roma.jpg" alt="card image">
+            </div>
+            <p>Venecia y Roma - Octubre</p>
+            <p>Italia | Europa</p>
+            <p>10 días | 9 noches</p>
+            <p>4.73 | 30 reviews</p>
+            <p>9000 U$S + impuestos</p>
+          </div>
+          <!-- Paris  -->
+          <div class="card-container">
+            <div class="card-img-container">
+              <img class="card-img" src="/Multimedia/imagenes/paris.jpg" alt="card image">
+            </div>
+            <p>Paris - Agosto</p>
+            <p>Francia | Europa</p>
+            <p>5 días | 4 noches</p>
+            <p>4.58 | 27 reviews</p>
+            <p>10000 U$S + impuestos</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer-root">
+    <div class="footer-container">
+      <p>TuriMundo</p>
+      <nav class="footer-navbar">
+        <a class="footer-btn" href="https://twitter.com/?lang=es"><i class="fa-brands fa-twitter"></i></a>
+        <a class="footer-btn" href="https://es-la.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="footer-btn" href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
