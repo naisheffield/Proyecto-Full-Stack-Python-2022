@@ -16,6 +16,7 @@ class PaqueteDetalle {
 
   crearElemento() {
     const detallesContenedor = document.createElement('article');
+    detallesContenedor.id = "pack-details-container";
     detallesContenedor.dataset.id = this.id;
 
     const banner = this.#crearBanner();
@@ -131,17 +132,16 @@ class PaqueteDetalle {
     agregarCarritoInput.value = "Agregar al Carrito";
 
     formularioCompra.innerHTML = `
-      <div style="display: flex;">
+      <div>
         <label for="cantidad-pasajes">
-          <strong>Cantidad de paquetes:</strong>
-          <br>
-          <span class="small-note">(máximo 10 viajes)</span>
+          <strong>Cantidad de paquetes:</strong>     
         </label>
-        <input type="number" name="cantidad-pasajes" id="cantidad-pasajes" min="1" max="10" placeholder="2">
+        <input type="number" name="cantidad-pasajes" id="cantidad-pasajes" min="1" max="10" placeholder="0" value="1">
       </div>
-      ${agregarCarritoInput.outerHTML}  
     `;
     
+    formularioCompra.appendChild(agregarCarritoInput);
+
     return formularioCompra;
   }
 
