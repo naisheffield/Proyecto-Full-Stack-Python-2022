@@ -1,6 +1,7 @@
 import paquetesDataCompleta from "../../Data/paquetes.json" assert { type: "json" };
 import { PaqueteCard } from "./componentes/PaqueteCard.js";
 import { PaqueteDetalle } from "./componentes/PaqueteDetalle.js";
+import { agregarALocalStorage } from "../storage/local-storage.js";
 
 function inicializarListadoPaquetes() {
   renderizarListadoPaquetes(paquetesDataCompleta);
@@ -16,7 +17,7 @@ function renderizarListadoPaquetes(listadoPaquetes) {
   }
 }
 
-// implementar con el filtro de la página Paquetes
+// implementar esta funcion con el filtro de la página Paquetes
 // function renderizarPaquetesFiltrados(listadoPaquetes) {
 //   eliminarComponentesHijos("grilla-paquetes");
 //   renderizarMensaje("");
@@ -45,14 +46,17 @@ function renderizarDetallesPaquete(dataPaquete) {
 
   // Callback placeholder.
   // TO-DO: implementar carrito y localStorage
-  const cb = (e) => {
+  const agregarACarritoCB = (e) => {
     e.preventDefault();
 
-    console.log("agregado al carrito");
-    console.log(e);
+    const cantidad = document.getElementById("cantidad-pasajes").value;
+    const id = document.getElementById("pack-details-container").dataset.id;
+    const paquete = { id, cantidad: parseInt(cantidad) };
+
+    agregarALocalStorage(paquete);
   }
 
-  const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, cb);
+  const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB);
   const detallesElemento = detallesPaqueteMapeado.crearElemento();
 
   seccionDetallePaquete.appendChild(detallesElemento);
