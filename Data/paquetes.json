@@ -1,49 +1,6 @@
 {
   "paquetes": [
     {
-      "id": "id del paquete (tipo number)",
-      "nombre": "nombre del paquete",
-      "servicios": [
-        "servicio-01",
-        "servicio-02",
-        "servicio-03",
-        "servicio-04",
-        "servicio-05"
-      ],
-      "descripcion": [
-        ["dia-01-ubicacion", "descripcion del servicio de la fecha"],
-        ["dia-02-ubicacion", "descripcion del servicio de la fecha"],
-        ["dia-03-ubicacion", "descripcion del servicio de la fecha"],
-        ["dia-04-ubicacion", "descripcion del servicio de la fecha"]
-      ],
-      "destino": {
-        "ciudad": "nombre de la ciudad",
-        "pais": "nombre del pais/región",
-        "continente": "nombre del continente"
-      },
-      "precio": "precio total del paquete en dolares (U$S)",
-      "ubicacion": "coordenadas del destino para geolocalizacion",
-      "duracion": {
-        "dias": "cantidad de dias (tipo number)",
-        "noches": "cantidad de dias (tipo number)",
-        "total": "duracion total del viaje (tipo number)"
-      },
-      "fecha": {
-        "sinFormato": "dd-mm-yyyy",
-        "conFormato": "(fecha) de (mes) de (año)"
-      },
-      "review": {
-        "promedio": "puntaje promedio (5 puntos - tipo number)",
-        "cantidad": "cantidad de reviews (tipo number)"
-      },
-      "imagenes": [
-        "#",
-        "url-imagen-02",
-        "url-imagen-03",
-        "url-imagen-04"
-      ]
-    },
-    {
       "id": "123456789",
       "nombre": "Las Maldivas - Noviembre",
       "servicios": [
@@ -91,6 +48,254 @@
         "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg",
         "https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg",
         "https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg"
+      ]
+    },
+    {
+      "id": "132165489",
+      "nombre": "Canadá - Octubre",
+      "servicios": [
+        "Pasajes aéreos internacionales",
+        "Traslados de llegada y salida",
+        "Alojamiento en categoría turista",
+        "Desayuno diario",
+        "Guía de habla hispana durante todo el recorrido",
+        "Visitas según itinerario"
+      ],
+      "descripcion": [
+        ["10 de Octubre - Ezeiza, Buenos Aires, Argentina", "Salida del Aeropuerto Internacional de Ezeiza en vuelo hacia destino"],
+        ["11 de Octubre - Malé, Maldivas", "Desayuno y visita panorámica de la capital de Maldivas. Tarde libre para actividades personales. A las 15.30 hrs traslado al puerto para embarcar en el crucero Silja Line que dispone de 3 restaurantes, club nocturno, discoteca y tiendas libres de impuestos. Durante la travesía se pasa por un hermoso archipiélago de más de 2.000 islas que se extiende a lo largo de la costa. Alojamiento en camarotes dobles exteriores de la categoría A."],
+        ["12 de Octubre - Malé, Maldivas", "Desayuno bufet a bordo y desembarque a las 9.40 hrs. A continuación visita panorámica de la costa de Malé. Alojamiento en el Hotel. "],
+        ["14 de Octubre - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["16 de Octubre - Malé, Maldivas", "Desayuno y salida hacia la isla Filitheyo. Recorreremos los impresionantes paisajes del archipiélago. Alojamiento en Hotel de lujo."],
+        ["18 de Octubre - Filitheyo, Maldivas", "Salida por la mañana hacia Borgund pasando por las encantadoras localidades enclavadas en un bellísimo paisaje isleño. Práctica de actividades marinas. Alojamiento en Hotel de lujo."],
+        ["20 de Octubre - Filitheyo, Maldivas", "Desayuno y partida hacia Malé a las 09.45 hrs. Desembarque y visita de la ciudad, recorriendo los principales monumentos y lugares históricos, tal como la Plaza del Ayuntamiento, el Museo Nacional, y el edificio de la Bolsa. Alojamiento en el Hotel."],
+        ["21 de Octubre - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["23 de Octubre - Malé, Maldivas", "Desayuno. A la hora a indicar traslado al aeropuerto, salida en vuelo de regreso"],
+        ["24 de Octubre - Ezeiza, Buenos Aires, Argentina", "Retorno al Aeropuerto Internacional de Ezeiza en vuelo desde destino"]
+      ],
+      "destino": {
+        "ciudad": "Alberta y Toronto",
+        "pais": "Canadá",
+        "continente": "Norteamérica"
+      },
+      "precio": "12000",
+      "ubicacion": "43°40′13″N 79°23′12″O",
+      "duracion": {
+        "dias": "12",
+        "noches": "11",
+        "total": "14"
+      },
+      "fecha": {
+        "sinFormato": "10-10-2022",
+        "conFormato": "10 de Octubre de 2022"
+      },
+      "review": {
+        "promedio": "4.37",
+        "cantidad": "28"
+      },
+      "imagenes": [
+        "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg",
+        "https://images.pexels.com/photos/3572740/pexels-photo-3572740.jpeg",
+        "https://images.pexels.com/photos/1519088/pexels-photo-1519088.jpeg",
+        "https://images.pexels.com/photos/1750754/pexels-photo-1750754.jpeg"
+      ]
+    },
+    {
+      "id": "514135499",
+      "nombre": "Ruinas de Machu Picchu - Noviembre",
+      "servicios": [
+        "Pasajes aéreos internacionales",
+        "Traslados de llegada y salida",
+        "Alojamiento en categoría turista",
+        "Desayuno diario",
+        "Guía de habla hispana durante todo el recorrido",
+        "Visitas según itinerario"
+      ],
+      "descripcion": [
+        ["21 de Noviembre - Ezeiza, Buenos Aires, Argentina", "Salida del Aeropuerto Internacional de Ezeiza en vuelo hacia destino"],
+        ["22 de Noviembre - Malé, Maldivas", "Desayuno y visita panorámica de la capital de Maldivas. Tarde libre para actividades personales. A las 15.30 hrs traslado al puerto para embarcar en el crucero Silja Line que dispone de 3 restaurantes, club nocturno, discoteca y tiendas libres de impuestos. Durante la travesía se pasa por un hermoso archipiélago de más de 2.000 islas que se extiende a lo largo de la costa. Alojamiento en camarotes dobles exteriores de la categoría A."],
+        ["23 de Noviembre - Malé, Maldivas", "Desayuno bufet a bordo y desembarque a las 9.40 hrs. A continuación visita panorámica de la costa de Malé. Alojamiento en el Hotel. "],
+        ["24 de Noviembre - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["25 de Noviembre - Malé, Maldivas", "Desayuno y salida hacia la isla Filitheyo. Recorreremos los impresionantes paisajes del archipiélago. Alojamiento en Hotel de lujo."],
+        ["26 de Noviembre - Filitheyo, Maldivas", "Salida por la mañana hacia Borgund pasando por las encantadoras localidades enclavadas en un bellísimo paisaje isleño. Práctica de actividades marinas. Alojamiento en Hotel de lujo."],
+        ["27 de Noviembre - Filitheyo, Maldivas", "Desayuno y partida hacia Malé a las 09.45 hrs. Desembarque y visita de la ciudad, recorriendo los principales monumentos y lugares históricos, tal como la Plaza del Ayuntamiento, el Museo Nacional, y el edificio de la Bolsa. Alojamiento en el Hotel."],
+        ["28 de Noviembre - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["29 de Noviembre - Malé, Maldivas", "Desayuno. A la hora a indicar traslado al aeropuerto, salida en vuelo de regreso"],
+        ["30 de Noviembre - Ezeiza, Buenos Aires, Argentina", "Retorno al Aeropuerto Internacional de Ezeiza en vuelo desde destino"]
+      ],
+      "destino": {
+        "ciudad": "Machu Picchu",
+        "pais": "Perú",
+        "continente": "Sudamérica"
+      },
+      "precio": "8000",
+      "ubicacion": "13°09′47″S 72°32′44″O",
+      "duracion": {
+        "dias": "8",
+        "noches": "7",
+        "total": "9"
+      },
+      "fecha": {
+        "sinFormato": "21-11-2022",
+        "conFormato": "21 de Noviembre de 2022"
+      },
+      "review": {
+        "promedio": "4.72",
+        "cantidad": "15"
+      },
+      "imagenes": [
+        "https://images.pexels.com/photos/5503236/pexels-photo-5503236.jpeg",
+        "https://images.pexels.com/photos/7343984/pexels-photo-7343984.jpeg",
+        "https://images.pexels.com/photos/7343992/pexels-photo-7343992.jpeg",
+        "https://images.pexels.com/photos/5198285/pexels-photo-5198285.jpeg"
+      ]
+    },
+    {
+      "id": "165498667",
+      "nombre": "Bora Bora - Noviembre",
+      "servicios": [
+        "Pasajes aéreos internacionales",
+        "Traslados de llegada y salida",
+        "Alojamiento en categoría turista",
+        "Desayuno diario",
+        "Guía de habla hispana durante todo el recorrido",
+        "Visitas según itinerario"
+      ],
+      "descripcion": [
+        ["3 de Noviembre - Ezeiza, Buenos Aires, Argentina", "Salida del Aeropuerto Internacional de Ezeiza en vuelo hacia destino"],
+        ["4 de Noviembre - Malé, Maldivas", "Desayuno y visita panorámica de la capital de Maldivas. Tarde libre para actividades personales. A las 15.30 hrs traslado al puerto para embarcar en el crucero Silja Line que dispone de 3 restaurantes, club nocturno, discoteca y tiendas libres de impuestos. Durante la travesía se pasa por un hermoso archipiélago de más de 2.000 islas que se extiende a lo largo de la costa. Alojamiento en camarotes dobles exteriores de la categoría A."],
+        ["5 de Noviembre - Malé, Maldivas", "Desayuno bufet a bordo y desembarque a las 9.40 hrs. A continuación visita panorámica de la costa de Malé. Alojamiento en el Hotel. "],
+        ["6 de Noviembre - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["8 de Noviembre - Malé, Maldivas", "Desayuno y salida hacia la isla Filitheyo. Recorreremos los impresionantes paisajes del archipiélago. Alojamiento en Hotel de lujo."],
+        ["10 de Noviembre - Filitheyo, Maldivas", "Salida por la mañana hacia Borgund pasando por las encantadoras localidades enclavadas en un bellísimo paisaje isleño. Práctica de actividades marinas. Alojamiento en Hotel de lujo."],
+        ["11 de Noviembre - Filitheyo, Maldivas", "Desayuno y partida hacia Malé a las 09.45 hrs. Desembarque y visita de la ciudad, recorriendo los principales monumentos y lugares históricos, tal como la Plaza del Ayuntamiento, el Museo Nacional, y el edificio de la Bolsa. Alojamiento en el Hotel."],
+        ["13 de Noviembre - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["15 de Noviembre - Malé, Maldivas", "Desayuno. A la hora a indicar traslado al aeropuerto, salida en vuelo de regreso"],
+        ["16 de Noviembre - Ezeiza, Buenos Aires, Argentina", "Retorno al Aeropuerto Internacional de Ezeiza en vuelo desde destino"]
+      ],
+      "destino": {
+        "ciudad": "Bora Bora",
+        "pais": "Polinesia Francesa",
+        "continente": "Oceanía"
+      },
+      "precio": "15000",
+      "ubicacion": "16°29′40″S 151°44′11″O",
+      "duracion": {
+        "dias": "10",
+        "noches": "9",
+        "total": "12"
+      },
+      "fecha": {
+        "sinFormato": "3-11-2022",
+        "conFormato": "3 de Noviembre de 2022"
+      },
+      "review": {
+        "promedio": "4.88",
+        "cantidad": "10"
+      },
+      "imagenes": [
+        "https://images.pexels.com/photos/9482139/pexels-photo-9482139.jpeg",
+        "https://images.pexels.com/photos/9394306/pexels-photo-9394306.jpeg",
+        "https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg",
+        "https://images.pexels.com/photos/11434425/pexels-photo-11434425.jpeg"
+      ]
+    },
+    {
+      "id": "876131224",
+      "nombre": "Venecia y Roma - Diciembre",
+      "servicios": [
+        "Pasajes aéreos internacionales",
+        "Traslados de llegada y salida",
+        "Alojamiento en categoría turista",
+        "Desayuno diario",
+        "Guía de habla hispana durante todo el recorrido",
+        "Visitas según itinerario"
+      ],
+      "descripcion": [
+        ["7 de Diciembre - Ezeiza, Buenos Aires, Argentina", "Salida del Aeropuerto Internacional de Ezeiza en vuelo hacia destino"],
+        ["8 de Diciembre - Malé, Maldivas", "Desayuno y visita panorámica de la capital de Maldivas. Tarde libre para actividades personales. A las 15.30 hrs traslado al puerto para embarcar en el crucero Silja Line que dispone de 3 restaurantes, club nocturno, discoteca y tiendas libres de impuestos. Durante la travesía se pasa por un hermoso archipiélago de más de 2.000 islas que se extiende a lo largo de la costa. Alojamiento en camarotes dobles exteriores de la categoría A."],
+        ["9 de Diciembre - Malé, Maldivas", "Desayuno bufet a bordo y desembarque a las 9.40 hrs. A continuación visita panorámica de la costa de Malé. Alojamiento en el Hotel. "],
+        ["10 de Diciembre - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["12 de Diciembre - Malé, Maldivas", "Desayuno y salida hacia la isla Filitheyo. Recorreremos los impresionantes paisajes del archipiélago. Alojamiento en Hotel de lujo."],
+        ["14 de Diciembre - Filitheyo, Maldivas", "Salida por la mañana hacia Borgund pasando por las encantadoras localidades enclavadas en un bellísimo paisaje isleño. Práctica de actividades marinas. Alojamiento en Hotel de lujo."],
+        ["15 de Diciembre - Filitheyo, Maldivas", "Desayuno y partida hacia Malé a las 09.45 hrs. Desembarque y visita de la ciudad, recorriendo los principales monumentos y lugares históricos, tal como la Plaza del Ayuntamiento, el Museo Nacional, y el edificio de la Bolsa. Alojamiento en el Hotel."],
+        ["16 de Diciembre - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["18 de Diciembre - Malé, Maldivas", "Desayuno. A la hora a indicar traslado al aeropuerto, salida en vuelo de regreso"],
+        ["19 de Diciembre - Ezeiza, Buenos Aires, Argentina", "Retorno al Aeropuerto Internacional de Ezeiza en vuelo desde destino"]
+      ],
+      "destino": {
+        "ciudad": "Venecia y Roma",
+        "pais": "Italia",
+        "continente": "Europa"
+      },
+      "precio": "9000",
+      "ubicacion": "45°26′23″N 12°19′55″E",
+      "duracion": {
+        "dias": "10",
+        "noches": "9",
+        "total": "12"
+      },
+      "fecha": {
+        "sinFormato": "7-12-2022",
+        "conFormato": "7 de Diciembre de 2022"
+      },
+      "review": {
+        "promedio": "4.73",
+        "cantidad": "30"
+      },
+      "imagenes": [
+        "https://images.pexels.com/photos/3546189/pexels-photo-3546189.jpeg",
+        "https://images.pexels.com/photos/532263/pexels-photo-532263.jpeg",
+        "https://images.pexels.com/photos/208701/pexels-photo-208701.jpeg",
+        "https://images.pexels.com/photos/7245255/pexels-photo-7245255.jpeg"
+      ]
+    },
+    {
+      "id": "2366572364",
+      "nombre": "París - Agosto",
+      "servicios": [
+        "Pasajes aéreos internacionales",
+        "Traslados de llegada y salida",
+        "Alojamiento en categoría turista",
+        "Desayuno diario",
+        "Guía de habla hispana durante todo el recorrido",
+        "Visitas según itinerario"
+      ],
+      "descripcion": [
+        ["18 de Agosto - Ezeiza, Buenos Aires, Argentina", "Salida del Aeropuerto Internacional de Ezeiza en vuelo hacia destino"],
+        ["19 de Agosto - Malé, Maldivas", "Desayuno y visita panorámica de la capital de Maldivas. Tarde libre para actividades personales. A las 15.30 hrs traslado al puerto para embarcar en el crucero Silja Line que dispone de 3 restaurantes, club nocturno, discoteca y tiendas libres de impuestos. Durante la travesía se pasa por un hermoso archipiélago de más de 2.000 islas que se extiende a lo largo de la costa. Alojamiento en camarotes dobles exteriores de la categoría A."],
+        ["20 de Agosto - Malé, Maldivas", "Desayuno bufet a bordo y desembarque a las 9.40 hrs. A continuación visita panorámica de la costa de Malé. Alojamiento en el Hotel. "],
+        ["21 de Agosto - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["22 de Agosto - Malé, Maldivas", "Desayuno y salida hacia la isla Filitheyo. Recorreremos los impresionantes paisajes del archipiélago. Alojamiento en Hotel de lujo."],
+        ["23 de Agosto - Malé, Maldivas", "Desayuno y día libre. Alojamiento en Malé."],
+        ["24 de Agosto - Malé, Maldivas", "Desayuno. A la hora a indicar traslado al aeropuerto, salida en vuelo de regreso"],
+        ["25 de Agosto - Ezeiza, Buenos Aires, Argentina", "Retorno al Aeropuerto Internacional de Ezeiza en vuelo desde destino"]
+      ],
+      "destino": {
+        "ciudad": "París",
+        "pais": "Francia",
+        "continente": "Europa"
+      },
+      "precio": "10000",
+      "ubicacion": "48°51′25″N 2°21′05″E",
+      "duracion": {
+        "dias": "5",
+        "noches": "4",
+        "total": "7"
+      },
+      "fecha": {
+        "sinFormato": "18-8-2023",
+        "conFormato": "18 de Agosto de 2023"
+      },
+      "review": {
+        "promedio": "4.58",
+        "cantidad": "27"
+      },
+      "imagenes": [
+        "https://images.pexels.com/photos/3631051/pexels-photo-3631051.jpeg",
+        "https://images.pexels.com/photos/12485875/pexels-photo-12485875.jpeg",
+        "https://images.pexels.com/photos/9255581/pexels-photo-9255581.jpeg",
+        "https://images.pexels.com/photos/6479141/pexels-photo-6479141.jpeg"
       ]
     }
   ]
