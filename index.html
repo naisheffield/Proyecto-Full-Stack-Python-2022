@@ -15,7 +15,10 @@
 <body>
   <header class="header-root">
     <div class="header-container">
-      <h1>TuriMundo</h1>
+      <div class="logo">
+        <img class="header-logo" src="/Multimedia/favicon_globo.png" alt="logo">
+        <h1>TuriMundo</h1>
+      </div>
       <nav class="header-navbar active">
         <a class="header-btn" href="./index.html">Inicio</a>
         <a class="header-btn" href="./paquetes.html">Paquetes</a>
@@ -30,11 +33,16 @@
     </div>
   </header>
   <main class="main-root">
+
     <div class="main-container">
-      <section class="home-slider">
-        <!-- Slides del Carrousel -->
+      
+      <!-- Carrusel -->
+      <section class="home-slider"> 
+        <h2><b>OFERTAS DE TEMPORADA</b></h2>
+        <!-- Slides del Carrusel -->
+        <div class="slider-container" id="slider-container">
+
           <!-- Slide 1 -->
-        <div class="slider-container">
           <div class="slide">
             <div class="slide-overlay">
               <p>19 DE OCTUBRE</p>
@@ -42,69 +50,96 @@
               <p>Una experiencia imperdible de 5 días y 4 noches en un paraíso terrenal</p>
               <button class="slide-btn">VER DETALLES</button>
             </div>
-            <img class="slide-image" src="/Multimedia/imagenes/location-pic-01.jpeg" alt="travel-picture">    
+            <img class="slide-image" src="/Multimedia/imagenes/location-pic-01.jpeg" alt="travel-picture">
           </div>
+
           <!-- Slide 2 -->
-          <!-- <div class="slide">
+          <div class="slide">
             <div class="slide-overlay">
               <p>25 DE OCTUBRE</p>
               <h3>Viajá a Canadá</h3>
               <p>Viví las maravillas naturales de Canadá por 12 días y 11 noches</p>
               <button class="slide-btn">VER DETALLES</button>
             </div>
-            <img class="slide-image" src="/Multimedia/imagenes/canada.jpg" alt="travel-picture">    
-          </div> -->
+            <img class="slide-image" src="/Multimedia/imagenes/canada.jpg" alt="travel-picture">
+          </div>
+
           <!-- Slide 3 -->
-          <!-- <div class="slide">
+          <div class="slide">
             <div class="slide-overlay">
               <p>10 DE NOVIEMBRE</p>
               <h3>Viajá a Machu Picchu</h3>
               <p>Conocé las ruinas Incas y todos sus secretos por 8 días y 7 noches</p>
               <button class="slide-btn">VER DETALLES</button>
             </div>
-            <img class="slide-image" src="/Multimedia/imagenes/machu-picchu.jpg" alt="travel-picture">    
-          </div> -->
+            <img class="slide-image" src="/Multimedia/imagenes/machu-picchu.jpg" alt="travel-picture">
+          </div>
+
           <!-- Slide 4 -->
-          <!-- <div class="slide">
+          <div class="slide">
             <div class="slide-overlay">
               <p>25 DE NOVIEMBRE</p>
               <h3>Viajá a los islotes de Bora Bora</h3>
               <p>Un destino exótico para conocer y disfrutar por 10 días y 9 noches</p>
               <button class="slide-btn">VER DETALLES</button>
             </div>
-            <img class="slide-image" src="/Multimedia/imagenes/bora-bora.jpg" alt="travel-picture">    
-          </div> -->
+            <img class="slide-image" src="/Multimedia/imagenes/bora-bora.jpg" alt="travel-picture">
+          </div>
+
           <!-- Slide 5 -->
-          <!-- <div class="slide">
+          <div class="slide">
             <div class="slide-overlay">
               <p>29 DE OCTUBRE</p>
               <h3>Viajá a Italia</h3>
-              <p>Un recorrido por Venecia y Roma memoriable por 10 días y 9 noches</p>
+              <p>Un recorrido por Venecia y Roma memorable por 10 días y 9 noches</p>
               <button class="slide-btn">VER DETALLES</button>
             </div>
-            <img class="slide-image" src="/Multimedia/imagenes/venecia.jpg" alt="travel-picture">    
-          </div> -->
+            <img class="slide-image" src="/Multimedia/imagenes/venecia.jpg" alt="travel-picture">
+          </div>
+        </div>
 
-          <ol class="slider-nav">
-            <li class="slider-nav-btn active"></li>
-            <li class="slider-nav-btn"></li>
-            <li class="slider-nav-btn"></li>
-            <li class="slider-nav-btn"></li>
-            <li class="slider-nav-btn"></li>
-          </ol>
+        <div class="slide-btn slide-btn-right" id="btn-right">&#62;</div>
+        <div class="slide-btn slide-btn-left" id="btn-left">&#60;</div>
+
+        <!-- <ul class="slider-nav">
+          <li class="slider-nav-btn active"></li>
+          <li class="slider-nav-btn"></li>
+          <li class="slider-nav-btn"></li>
+          <li class="slider-nav-btn"></li>
+          <li class="slider-nav-btn"></li>
+        </ul> -->
+      </section>
+
+      <section class="home-info">
+        <h2>VIAJAR COMO ESTILO DE VIDA</h2>
+        <div class="packages-info">
+          <img class="img-info" src="/Multimedia/imagenes/viajar.jpg" alt="viajar"> 
+          <p><b>Nos destacamos por nuestra amplia variedad de destinos para ofrecerte. ¿Ya fijaste tu próximo destino? Conoce todos los paquetes disponibles haciendo <a href="/paquetes.html">click acá</a></b></p>
         </div>
       </section>
-      <section class="home-info">
-        <h2>SECCION 2</h2>
+
+      <section class="home-contact">
+        <h2>TE ASESORAMOS</h2>
+        <div class="contact-info">
+          <!-- <img src="/Multimedia/imagenes/viajar2.jpg" alt="viajar"> -->
+          <p>Si ya tenés en mente el destino y la fecha, te invitamos a que <a href="/arma-tu-viaje.html"> armes tu viaje.</a> ¡Solo tenés que llenar los datos y nosotros nos encargamos del resto!</p>
+        </div>
+        <!-- <div class="img-contact">
+          <img src="/Multimedia/imagenes/viajar2.jpg" alt="viajar">
+        </div> -->
+        <div class="contact-info">
+          <p>¿Tenés algunda duda particular? <a href="/contacto.html"> ¡Contactanos!</a> Nos pondremos en contacto con vos a la brevedad.</p>
+        </div>
       </section>
-      <section class="home-reviews">
-        <h2>SECCION 3</h2>
-      </section>
+      <br><br><br><br><br><br><br>
     </div>
   </main>
   <footer class="footer-root">
     <div class="footer-container">
-      <p>TuriMundo</p>
+      <div class="logo">
+        <img class="header-logo" src="/Multimedia/favicon_globo.png" alt="logo">
+        <h1>TuriMundo</h1>
+      </div>
       <nav class="footer-navbar">
         <a class="footer-btn" href="https://twitter.com/?lang=es"><i class="fa-brands fa-twitter"></i></a>
         <a class="footer-btn" href="https://es-la.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
@@ -113,4 +148,5 @@
     </div>
   </footer>
 </body>
+<script src="/JS/app.js" type="module"></script>
 </html>

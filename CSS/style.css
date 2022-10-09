@@ -12,13 +12,14 @@
   --footer-height: 54px;
 
   /* -- Theme Color Scheme -- */
-  --color-primary: red;
-  --color-secondary: blue;
-  --color-tertiary: green;
+  --color-primary: rgb(100, 147, 205);
+  --color-secondary: rgba(124, 152, 197, 0.92);
+  --color-tertiary: rgb(180, 180, 180);
 }
 
 html{
   font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -33,6 +34,8 @@ body {
   display: flex;
   height: var(--header-height);
   justify-content: center;
+  background-color: var(--color-secondary);
+  font-weight: bold;
 }
 
 .header-container {
@@ -54,12 +57,14 @@ body {
 .header-btn {
   align-items: center;
   display: flex;
-  padding: 0 0.5rem;
+  padding: 0 0.7rem;
   text-decoration: none;
+  border-radius: 5px;
+  color: black;
 }
 
 .header-btn:hover {
-  background-color: var(--color-primary);
+  background-color: white;
 }
 
 .header-burger-btn {
@@ -69,7 +74,7 @@ body {
 .header-cart-btn {
   align-items: center;
   background-color: transparent;
-  border: 1px solid gray;
+  border: 1px solid black;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -79,6 +84,20 @@ body {
   position: relative;
   transition: 0.1s;
   width: 36px;
+}
+
+.logo{
+  max-width: 70%;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo{
+  max-width: 70%;
+  height: 70px;
 }
 
 .header-cart-btn img {
@@ -129,74 +148,100 @@ body {
 
 
 /* ---- HOME-SLIDER STYLES ---- */
-.slider-container {
-  border-radius: 8px;
-  background-color: gray;
+.home-slider{
+    width: 100%;
+    max-width: 120em;
+    background-color: whitesmoke;
+    margin: 1% 0 0 0;
+    padding: 0;
+    overflow-x: hidden; /*Para que no pegue el salto al mover el slide*/
+    border-radius: 8px;
+    box-shadow: 0 0 0 5px whitesmoke,
+                0 5px 5px;
+    position: relative;
+}
+
+.home-slider .slider-container {
+  width: 500%;
   display: flex;
+  flex-flow: row nowrap;
   max-height: 500px;
   overflow: hidden;
+  margin: auto;
   position: relative;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -100%;
+
+  transition: all .5s ease;
+  transform: translateX(0%); /* Posición inicial del carrusel */
 }
 
-.slider-nav {
-  bottom: 24px;
-  cursor: pointer;
-  display: flex;
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  position: absolute;
-  z-index: 3;
-}
-
-.slider-nav-btn {
-  border-radius: 50%;
-  border: 1px solid white;
-  height: 12px;
-  margin: 0 6px;
-  transition: 0.075s;
-  width: 12px;
-}
-
-.slider-nav-btn:hover {
-  background-color: rgba(255, 255,255, 0.4);
-}
-
-.slider-nav-btn:active {
-  background-color: white;
-}
-
-.slider-nav-btn.active {
-  background-color: white;
-}
-
-.slide {
-  display: flex;
-  position: relative;
+.home-slider .slide-image {
+  min-height: 10vh; /* 400px; Chequear altura con el tamaño de fuente final */
   width: 100%;
-}
-
-.slide-image {
+  height: 100%;
+  display: block;
   align-self: center;
-  min-height: 400px; /* Chequear altura con el tamaño de fuente final */
   position: relative;
-  width: 100%;
   z-index: 0;
+  object-fit: cover;
 }
 
-.slide-overlay {
-  backdrop-filter: blur(4px);
+.home-slider .slide {
+  min-height: 10vh; /* 400px; Chequear altura con el tamaño de fuente final */
+  width: 100%;
+  align-self: center;
+  position: relative;
+  z-index: 0; 
+}
+
+.home-slider .slider-nav-btn:hover {
+  background-color: rgba(155, 148, 148, 0.9);
+}
+
+.home-slider .slider-nav {
+  width: 100%;
+  /* bottom: 24px; */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  /* position: absolute; */
+  z-index: 3;
+  padding: 0;
+}
+
+.home-slider .slider-nav-btn {
+  border-radius: 50%;
+  border: 1px solid black ;
+  margin: .5em;
+  /* transition: 0.075s; */
+  height: 1em;
+  width: 1em;
+  cursor: pointer;
+}
+
+/* .slider-nav-btn:active {
+  background-color: white;
+} */
+
+.home-slider .slider-nav-btn.active {
+  background-color: rgba(87, 78, 78, 0.9);
+}
+
+.home-slider .slide-overlay {
+  backdrop-filter: blur(1px);
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
-  left: 40%;
-  padding: 5%;
+  padding: 10% 7% 0;
   position: absolute;
   z-index: 1;
-  right: 0;
   top: 0;
+  right: 10%;
+  left: 10%;
   bottom: 0;
   transition: 0.2s;
 }
@@ -210,11 +255,55 @@ body {
   font-weight: bold;
   padding: 0.5rem;
   transition: 0.4s;
+  position: absolute;
 }
 
 .slide-btn:hover {
   background-color: white;
   color: rgb(20, 20, 20);
+}
+
+.slide-btn-right{
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.slide-btn-left{
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
+.home-info, .home-contact{
+  border-radius: 8px;
+  box-shadow: 0 0 0 5px whitesmoke,
+              0 5px 5px;
+  width: 100%;
+}
+
+.packages-info, .contact-info{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color:  var(--color-primary);
+  font-weight: bold;
+  width: 100%;
+}
+
+.img-info{
+  min-height: 10vh; /* 400px; Chequear altura con el tamaño de fuente final */
+  width: 50%;
+  display: block;
+  position: relative;
+  object-fit: cover;
+}
+
+.img-contact{
+  min-height: 10vh; /* 400px; Chequear altura con el tamaño de fuente final */
+  width: 1vw;
+  object-fit: cover;
 }
 
 /* ---- FOOTER STYLES ---- */
@@ -226,6 +315,8 @@ body {
   height: var(--footer-height);
   position: relative;
   width: 100%;
+  background-color: var(--color-primary);
+  font-weight: bold;
 }
 
 .footer-container {
@@ -237,11 +328,18 @@ body {
 }
 
 .footer-btn {
-  background-color: wheat;
+  background-color: transparent;
   padding: 0.5rem;
   text-decoration: none;
-}
+  text-decoration: none;
+  align-items: center;
+  color: black;
+  border-radius: 5px;
+} 
 
+.footer-btn:hover {
+  background-color: white;
+}
 
 /* ---- PAQUETES - FILTRO ---- */
 /* Este conentedor coliciona con los estilos del form de la página contacto */
@@ -353,7 +451,7 @@ body {
 }
 
 .cart-sidebar-btn {
-  background-color: rgb(0, 116, 228); /* Cambiar por color principal */
+  background-color: var(--color-primary); /* Cambiar por color principal */
   border-radius: 6px;
   border: none;
   color: white;
@@ -437,7 +535,7 @@ textarea {
 }
 
 #boton {
-  background-color: rgb(58, 179, 195);
+  background-color:var(--color-primary);
   color: white;
   padding: 20px;
   font-size: 15px;
@@ -445,6 +543,7 @@ textarea {
 
 #boton:hover {
   cursor: pointer;
+  background-color:var(--color-secondary);
 }
 
 /* ---- PÁGINA DE ARMÁ TU VIAJE ---- */
@@ -473,7 +572,7 @@ textarea {
   font-size: 16px;
   font-weight: 500;
   margin: 6px 0;
-  background-color: rgb(131, 195, 203);
+  background-color: var(--color-secondary);
   font-weight: 600;
 }
 
