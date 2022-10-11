@@ -1,24 +1,37 @@
+const LS_KEY = "carrito";
 
 function agregarALocalStorage(itemNuevo) {
-  const itemsEnLS = JSON.parse(localStorage.getItem("carrito"));
+  const itemsEnLS = JSON.parse(localStorage.getItem(LS_KEY));
 
   if (itemsEnLS === null) {
-    localStorage.setItem("carrito", JSON.stringify([itemNuevo]));
+    localStorage.setItem(LS_KEY, JSON.stringify([itemNuevo]));
   } else {
-    const itemsActualizados = agregarCantidad(itemNuevo, itemsEnLS);
-    localStorage.setItem("carrito", JSON.stringify(itemsActualizados));
+    const itemsActualizados = agregarArticulo(itemNuevo, itemsEnLS);
+    console.log(itemsActualizados);
+    localStorage.setItem(LS_KEY, JSON.stringify(itemsActualizados));
   }
 }
 
-function agregarCantidad(itemNuevo, listadoItems) {
-  const listadoActualizado = listadoItems.map(item => {
+function obtenerItemsLocalStorage() {
+  return JSON.parse(localStorage.getItem(LS_KEY));
+}
+
+function agregarArticulo(itemNuevo, listadoItems) {
+  let esArticuloNuevo = true;
+
+  let listadoActualizado = listadoItems.map(item => {
     if(item.id === itemNuevo.id) {
       item.cantidad = item.cantidad + itemNuevo.cantidad;
+      esArticuloNuevo = false;
     }
     return item;
   });
 
+  if(esArticuloNuevo) {
+    listadoActualizado.push(itemNuevo);
+  }
+
   return listadoActualizado;
 }
 
-export { agregarALocalStorage };
+export { agregarALocalStorage, obtenerItemsLocalStorage };
