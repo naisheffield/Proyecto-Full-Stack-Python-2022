@@ -63,7 +63,7 @@ function renderizarDetallesPaquete(dataPaquete) {
 }
 
 // En caso que se necesite en otra parte del sitio exportar a un archivo separado
-function renderizarMensaje(texto) {
+export function renderizarMensaje(texto) {
   const elementoMensaje = document.getElementById("mensaje");
   elementoMensaje.textContent = texto;
 
