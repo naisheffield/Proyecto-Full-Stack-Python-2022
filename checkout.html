@@ -36,58 +36,30 @@
     <div class="main-container">
       <h2>CARRITO</h2>
       <section class="cart-container">
-        <div class="cart-list">
-          <div class="cart-item-container">
-            <div class="img-container">
-              <img class="card-img" src="https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg" alt="item image">
-            </div>
-            <div class="item-info-container">
-              <div class="item-title">
-                <h3>Las Maldivas - Noviembre</h3>
-                <span>5000 US$ + impuestos</span>
-              </div>
-              <span>Malé | Maldivas | Sur asiático</span>
-              <span>8 días | 7 noches</span>
-              <ul>
-                <li>Pasajes aéreos internacionales</li>
-                <li>Traslados de llegada y salida</li>
-                <li>Alojamiento en categoría turista</li>
-                <li>Desayuno diario</li>
-                <li>Guía de habla hispana durante todo el recorrido</li>
-                <li>Visitas según itinerario</li>
-              </ul>
-              <button>Eliminar</button>
-            </div>
-          </div>
-          <div class="cart-item-container">
-            <div class="img-container">
-              <img class="card-img" src="https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg" alt="item image">
-            </div>
-            <div class="item-info-container">
-              <div class="item-title">
-                <h3>Las Maldivas - Noviembre</h3>
-                <span>5000 US$ + impuestos</span>
-              </div>
-              <span>Malé | Maldivas | Sur asiático</span>
-              <span>8 días | 7 noches</span>
-              <ul>
-                <li>Pasajes aéreos internacionales</li>
-                <li>Traslados de llegada y salida</li>
-                <li>Alojamiento en categoría turista</li>
-                <li>Desayuno diario</li>
-                <li>Guía de habla hispana durante todo el recorrido</li>
-                <li>Visitas según itinerario</li>
-              </ul>
-              <button>Eliminar</button>
-            </div>
-          </div>
+        <div id="cart-list" class="cart-list">
+          <div id="mensaje" class="cart-list-message"></div>
         </div>
+        <!-- RESPONSIVE STYLES SIDEBAR
+          padding: 1rem;
+          border: 1px solid rgb(200 200 200);
+          border-radius: 8px;
+        -->
         <div class="cart-sidebar-container">
           <div class="cart-sidebar">
             <h3 class="cart-sidebar-title">RESUMEN</h3>
             <div class="cart-sidebar-item">
               <span>Precio</span>
               <span>50,00 US$</span>
+            </div>
+            <div style="padding-bottom: 1.5rem;">
+              <div class="cart-sidebar-item" style="margin-left: 1rem; font-size: 0.9rem; color: gray;padding-bottom: 0; text-align: start;">
+                <span>Las Maldivas - Noviembre ededede</span>
+                <span>50,00 US$</span>
+              </div>
+              <div class="cart-sidebar-item" style="margin-left: 1rem; font-size: 0.9rem; color: gray;padding-bottom: 0; text-align: start;">
+                <span>Las Maldivas - Noviembre</span>
+                <span>50,00 US$</span>
+              </div>
             </div>
             <div class="cart-sidebar-item">
               <span>Descuentos</span>
@@ -120,5 +92,6 @@
       </nav>
     </div>
   </footer>
+  <script src="./JS/checkout-page.js" type="module"></script>
 </body>
 </html>
