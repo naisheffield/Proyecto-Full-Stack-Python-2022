@@ -644,6 +644,7 @@ body {
 /* -- SIDEBAR STYLES -- */
 .cart-sidebar {
   position: fixed;
+  width: 320px;
 }
 
 .cart-sidebar-title{
@@ -656,6 +657,16 @@ body {
   justify-content: space-between;
   padding-bottom: 1.2rem;
   text-align: end;
+}
+.cart-sidebar-pack-item {
+  color: gray;
+  display: flex;
+  font-size: 0.9rem;
+  justify-content: space-between;
+  margin-left: 1rem;
+  padding-bottom: 0;
+  padding-bottom: 1.2rem;
+  text-align: start;
 }
 
 .cart-sidebar-item span {
@@ -724,6 +735,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+.item-title h3 {
+  margin-top: 0;
 }
 
 /* ---- PÁGINA DE CONTACTO ---- */
@@ -961,6 +975,7 @@ input[type=radio] {
   /* -- CARRITO -- */
   .cart-sidebar {
     position: static;
+    width: auto;
   }
   
   .cart-container {
