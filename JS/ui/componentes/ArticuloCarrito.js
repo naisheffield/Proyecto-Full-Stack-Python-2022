@@ -1,5 +1,5 @@
 class ArticuloCarrito {
-  constructor(articuloData) {
+  constructor(articuloData, callbackHandler) {
     this.id = articuloData.id;
     this.nombre = articuloData.nombre;
     this.imageURL = articuloData.imagenes[0];
@@ -7,7 +7,8 @@ class ArticuloCarrito {
     this.cantidad = articuloData.cantidad;
     this.destino = articuloData.destino;
     this.duracion = articuloData.duracion;
-    this.servicios = articuloData.servicios
+    this.servicios = articuloData.servicios;
+    this.callbackHandler = callbackHandler;
   }
 
   crearElemento() {
@@ -36,11 +37,21 @@ class ArticuloCarrito {
         <ul>
           ${listadoServicios}
         </ul>
-        <button>Eliminar</button>
+        <button data-id=${this.id} class="cart-delete-btn">Eliminar</button>
       </div>
     `;
 
+    this.#agregarCallbackHandler(articuloContenedor);
+
     return articuloContenedor;
+  }
+
+  #agregarCallbackHandler(elementoContenedor) {
+    const botones = elementoContenedor.getElementsByClassName("cart-delete-btn");
+    
+    for(const btn of botones) {
+      btn.addEventListener("click", (e) => this.callbackHandler(e));
+    }
   }
 }
 
