@@ -1,14 +1,26 @@
 const LS_KEY = "carrito";
 
 function agregarALocalStorage(itemNuevo) {
-  const itemsEnLS = JSON.parse(localStorage.getItem(LS_KEY));
+  const itemsEnLS = obtenerItemsLocalStorage();
 
   if (itemsEnLS === null) {
-    localStorage.setItem(LS_KEY, JSON.stringify([itemNuevo]));
+    agregarItemLocalStorage([itemNuevo]);
   } else {
-    const itemsActualizados = agregarArticulo(itemNuevo, itemsEnLS);
-    console.log(itemsActualizados);
-    localStorage.setItem(LS_KEY, JSON.stringify(itemsActualizados));
+    const itemsActualizados = agregarArticuloAListado(itemNuevo, itemsEnLS);
+    agregarItemLocalStorage(itemsActualizados);
+  }
+}
+
+function eliminarItemLocalStorage(id) {
+  const itemsEnLS = obtenerItemsLocalStorage();
+  if (itemsEnLS === null) return;  
+
+  const itemsFiltrados = itemsEnLS.filter(item => item.id !== id);
+
+  if (itemsFiltrados.length > 0) {
+    agregarItemLocalStorage(itemsFiltrados);
+  } else {
+    localStorage.clear();
   }
 }
 
@@ -16,7 +28,11 @@ function obtenerItemsLocalStorage() {
   return JSON.parse(localStorage.getItem(LS_KEY));
 }
 
-function agregarArticulo(itemNuevo, listadoItems) {
+function agregarItemLocalStorage(item) {
+  localStorage.setItem(LS_KEY, JSON.stringify(item));
+}
+
+function agregarArticuloAListado(itemNuevo, listadoItems) {
   let esArticuloNuevo = true;
 
   let listadoActualizado = listadoItems.map(item => {
@@ -34,4 +50,8 @@ function agregarArticulo(itemNuevo, listadoItems) {
   return listadoActualizado;
 }
 
-export { agregarALocalStorage, obtenerItemsLocalStorage };
+export { 
+  agregarALocalStorage,
+  obtenerItemsLocalStorage,
+  eliminarItemLocalStorage
+};
