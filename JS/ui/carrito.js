@@ -2,6 +2,8 @@ import paquetesDataCompleta from "../../Data/paquetes.json" assert { type: "json
 import { ArticuloCarrito } from "./componentes/ArticuloCarrito.js";
 import { obtenerItemsLocalStorage } from "../storage/local-storage.js";
 import { renderizarMensaje } from "./listadoPaquetes.js";
+import { calcularCosto } from "../utils/calcularCosto.js";
+import { mapearArticulosConCantidad, mapearArticulosConCosto } from "../utils/filtros-mappers.js";
 
 function inicializarCheckout() {
   const { paquetes } = paquetesDataCompleta;
@@ -10,26 +12,30 @@ function inicializarCheckout() {
   if (articulosEnCarrito === null) {
     renderizarMensaje("No hay artículos en el Carrito.");
     renderizarDetalleCheckout([], { costo: 0, impuestos: 0 });
-  } else {
-    const dataArticulos = articulosEnCarrito.map(articulo => {
-      const [articuloFiltrado] = paquetes.filter(paquete => paquete.id === articulo.id);
-
-      return { ...articuloFiltrado, cantidad: articulo.cantidad };
-    });
-
-    const articulosConCosto = mapearArticulosConCosto(dataArticulos);
-    const costoTotal = calcularCosto(articulosConCosto);
-    
-    renderizarArticulosCarrito(dataArticulos);
-    renderizarDetalleCheckout(articulosConCosto, costoTotal);
+    return;
   }
+
+  const dataArticulosEnCarrito = mapearArticulosConCantidad(articulosEnCarrito, paquetes);
+  const articulosConCosto = mapearArticulosConCosto(dataArticulosEnCarrito);
+  const costoTotal = calcularCosto(articulosConCosto);
+  
+  renderizarArticulosCarrito(dataArticulosEnCarrito);
+  renderizarDetalleCheckout(articulosConCosto, costoTotal);
 }
 
 function renderizarArticulosCarrito(dataArticulos) {
   const listadoContenedor = document.getElementById("cart-list");
 
+  const eliminarArticuloCallBack = (e) => {
+    const itemID = e.target.dataset.id;
+    console.log(itemID);
+    
+    // Agregar manejo de localStorage al callback
+    // eliminarDeLocalStorage(id);
+  }
+
   dataArticulos.forEach(articulo => {
-    const articuloMapeado = new ArticuloCarrito(articulo);
+    const articuloMapeado = new ArticuloCarrito(articulo, eliminarArticuloCallBack);
     const articuloElemento = articuloMapeado.crearElemento();
 
     listadoContenedor.appendChild(articuloElemento);    
@@ -37,27 +43,28 @@ function renderizarArticulosCarrito(dataArticulos) {
 };
 
 function renderizarDetalleCheckout(articulosConCosto, costoTotal) {
-  console.log("articulos:", articulosConCosto);
-  console.log("costo:", costoTotal);
+  const { costo, impuestos } = costoTotal;
+
+  const listadoArticulos = document.getElementById("articulos-listado");
+  const subtotalElemento = document.getElementById("costo-subtotal");
+  const impuestosElemento = document.getElementById("costo-impuestos");
+  const totalElemento = document.getElementById("costo-total");
+  
+  articulosConCosto.forEach(articulo => {
+    const articuloElemento = document.createElement("div");
+    articuloElemento.className = "cart-sidebar-pack-item";
+  
+    articuloElemento.innerHTML = `
+      <span>${articulo.nombre}</span>
+      <span>${articulo.cantidad} x ${articulo.precio},00 US$</span>
+    `;
+
+    listadoArticulos.appendChild(articuloElemento);
+  })
+
+  subtotalElemento.textContent = `${costo},00 US$`;
+  impuestosElemento.textContent = `${impuestos},00 US$`;
+  totalElemento.textContent = `${costo + impuestos},00 US$`;
 };
-
-function mapearArticulosConCosto(dataArticulos) {
-  return dataArticulos.map(({ nombre, precio, cantidad }) => ({ nombre, precio, cantidad }));
-}
-
-// Esta funcion puede estar en un nuevo archivo de utilidades
-function calcularCosto(articulos) {
-  return articulos.reduce((acc, articulo) =>{
-    const precio = parseInt(articulo.precio);
-    const cantidad = parseInt(articulo.cantidad);
-    const costo = precio * cantidad;
-    const impuestos = costo * 0.25;
-
-    return {
-      costo: acc.costo + costo,
-      impuestos: acc.impuestos + impuestos 
-    };
-  }, { costo: 0, impuestos: 0 });
-}
 
 export { inicializarCheckout };
