@@ -1,6 +1,6 @@
 import paquetesDataCompleta from "../../Data/paquetes.json" assert { type: "json" };
 import { ArticuloCarrito } from "./componentes/ArticuloCarrito.js";
-import { obtenerItemsLocalStorage } from "../storage/local-storage.js";
+import { obtenerItemsLocalStorage, eliminarItemLocalStorage } from "../storage/local-storage.js";
 import { renderizarMensaje } from "./listadoPaquetes.js";
 import { calcularCosto } from "../utils/calcularCosto.js";
 import { mapearArticulosConCantidad, mapearArticulosConCosto } from "../utils/filtros-mappers.js";
@@ -28,10 +28,8 @@ function renderizarArticulosCarrito(dataArticulos) {
 
   const eliminarArticuloCallBack = (e) => {
     const itemID = e.target.dataset.id;
-    console.log(itemID);
-    
-    // Agregar manejo de localStorage al callback
-    // eliminarDeLocalStorage(id);
+    eliminarItemLocalStorage(itemID);
+    window.location.reload();
   }
 
   dataArticulos.forEach(articulo => {
