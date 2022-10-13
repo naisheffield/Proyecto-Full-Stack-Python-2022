@@ -17,13 +17,6 @@ function renderizarListadoPaquetes(listadoPaquetes) {
   }
 }
 
-// implementar esta funcion con el filtro de la página Paquetes
-// function renderizarPaquetesFiltrados(listadoPaquetes) {
-//   eliminarComponentesHijos("grilla-paquetes");
-//   renderizarMensaje("");
-//   renderizarListadoPaquetes(listadoPaquetes);
-// }
-
 function renderizarPaquete(dataPaquete) {
   const elementoContenedor = document.getElementById("grilla-paquetes");
 
@@ -44,8 +37,6 @@ function renderizarDetallesPaquete(dataPaquete) {
   seccionListadoPaquetes.style.display = "none";
   seccionDetallePaquete.style.display = "block";
 
-  // Callback placeholder.
-  // TO-DO: implementar carrito y localStorage
   const agregarACarritoCB = (e) => {
     e.preventDefault();
 
@@ -62,7 +53,6 @@ function renderizarDetallesPaquete(dataPaquete) {
   seccionDetallePaquete.appendChild(detallesElemento);
 }
 
-// En caso que se necesite en otra parte del sitio exportar a un archivo separado
 export function renderizarMensaje(texto) {
   const elementoMensaje = document.getElementById("mensaje");
   elementoMensaje.textContent = texto;
@@ -70,17 +60,8 @@ export function renderizarMensaje(texto) {
   if (texto.length === 0) {
     elementoMensaje.style.display = "none";
   } else {
-    elementoMensaje.style.display = "block";
+    elementoMensaje.style.display = "flex";
   }
 }
-
-// --> Implementar junto con el filtro
-// function eliminarComponentesHijos(idElementoContenedor) {
-//   const elementoContenedor = document.getElementById(idElementoContenedor);
-
-//   while(elementoContenedor.childElementCount > 0) {
-//     elementoContenedor.removeChild(elementoContenedor.lastChild);
-//   }
-// }
 
 export { inicializarListadoPaquetes, renderizarListadoPaquetes };

@@ -121,15 +121,16 @@ body {
   align-items: center;
   background-color: red;
   border-radius: 12px;
-  bottom: -10px;
+  bottom: -9px;
   color: white;
   display: none;
   font-weight: bold;
-  height: 24px;
+  font-size: 0.9rem;
+  height: 21px;
   justify-content: center;
   position: absolute;
-  right: -10px;
-  width: 24px;
+  right: -9px;
+  width: 21px;
   z-index: 5;
 }
 
@@ -416,14 +417,46 @@ body {
 /* ---- PAQUETE - SECCION de DETALLES ---- */
 /* -- BANNER -- */
 .pack-banner-container {
-  border-radius: 0;
-  border-start-start-radius: 12px;
+  background-color: gray;
   border-start-end-radius: 12px;
+  border-start-start-radius: 12px;
+  display: flex;
+  justify-content: center;
   margin: 0;
   max-height: 300px;
+  overflow: hidden;
+  position: relative;
 }
 .pack-banner-container .slide-overlay {
   left: 51%;
+}
+
+.pack-banner-content {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.pack-banner-image {
+  align-self: center;
+  min-height: 400px;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+.pack-banner-overlay {
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  left: 40%;
+  padding: 5%;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: 0.2s;
 }
 
 .pack-info-container {
@@ -614,7 +647,7 @@ body {
 }
 
 .card-info-container {
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .card-container, p {
@@ -635,6 +668,16 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.cart-list-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 250px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: gray;
 }
 
 .cart-sidebar-container {

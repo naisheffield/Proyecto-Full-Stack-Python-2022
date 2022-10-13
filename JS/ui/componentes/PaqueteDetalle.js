@@ -35,16 +35,16 @@ class PaqueteDetalle {
 
   #crearBanner() {
     const bannerContenedor = document.createElement("figure");
-    bannerContenedor.classList.add("slider-container", "pack-banner-container");
+    bannerContenedor.classList.add("pack-banner-container");
 
     bannerContenedor.innerHTML = `
-      <div class="slide">
-        <div class="slide-overlay">
+      <div class="pack-banner-content">
+        <div class="pack-banner-overlay">
           <p>${this.fecha.conFormato}</p>
           <h3>Viajá a ${this.destino.ciudad}</h3>
           <p>Una experiencia imperdible de ${this.duracion.dias} días y ${this.duracion.noches} noches</p>
         </div>
-        <img class="slide-image" src="${this.imagenes[0]}" alt="Banner de ${this.destino.ciudad}">    
+        <img class="pack-banner-image" src="${this.imagenes[0]}" alt="Banner de ${this.destino.ciudad}">    
       </div>
     `;
 
