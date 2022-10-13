@@ -6,12 +6,17 @@ import { calcularCosto } from "../utils/calcularCosto.js";
 import { mapearArticulosConCantidad, mapearArticulosConCosto } from "../utils/filtros-mappers.js";
 
 function inicializarCheckout() {
+  actualizarCarrito();
+}
+
+function actualizarCarrito() {
   const { paquetes } = paquetesDataCompleta;
   const articulosEnCarrito = obtenerItemsLocalStorage();
 
   if (articulosEnCarrito === null) {
     renderizarMensaje("No hay artículos en el Carrito.");
     renderizarDetalleCheckout([], { costo: 0, impuestos: 0 });
+    botonCajaHandler("El carrito se encuentra vacío!", false);
     return;
   }
 
@@ -21,6 +26,7 @@ function inicializarCheckout() {
   
   renderizarArticulosCarrito(dataArticulosEnCarrito);
   renderizarDetalleCheckout(articulosConCosto, costoTotal);
+  botonCajaHandler("Gracias por su compra!", true);
 }
 
 function renderizarArticulosCarrito(dataArticulos) {
@@ -64,5 +70,30 @@ function renderizarDetalleCheckout(articulosConCosto, costoTotal) {
   impuestosElemento.textContent = `${impuestos},00 US$`;
   totalElemento.textContent = `${costo + impuestos},00 US$`;
 };
+
+function eliminarArticulosCarrito() {
+  const listado = document.getElementById("cart-list");
+
+  while (listado.childElementCount > 0) {
+    listado.removeChild(listado.lastChild);
+  }
+}
+
+function botonCajaHandler(mensaje, compraSatisfactoria) {
+  const boton = document.querySelector(".cart-sidebar-btn");
+  
+  boton.addEventListener("click", () => {
+    renderizarMensaje(mensaje);
+
+    if (compraSatisfactoria) {
+      eliminarArticulosCarrito();
+      localStorage.clear();
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 4000);
+    }
+  })
+}
 
 export { inicializarCheckout };
