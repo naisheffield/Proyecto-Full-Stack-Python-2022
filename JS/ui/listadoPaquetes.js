@@ -2,6 +2,7 @@ import { obtenerDataDeJSON } from "../storage/jsonDataFetching.js";
 import { PaqueteCard } from "./componentes/PaqueteCard.js";
 import { PaqueteDetalle } from "./componentes/PaqueteDetalle.js";
 import { agregarALocalStorage } from "../storage/local-storage.js";
+import { actualizarContadorCarrito } from "./botonCarrito.js";
 
 async function inicializarListadoPaquetes() {
   const data = await obtenerDataDeJSON();
@@ -46,6 +47,7 @@ function renderizarDetallesPaquete(dataPaquete) {
     const paquete = { id, cantidad: parseInt(cantidad) };
 
     agregarALocalStorage(paquete);
+    actualizarContadorCarrito();
   }
 
   const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB);
@@ -58,10 +60,10 @@ export function renderizarMensaje(texto) {
   const elementoMensaje = document.getElementById("mensaje");
   elementoMensaje.textContent = texto;
 
-  if (texto.length === 0) {
-    elementoMensaje.style.display = "none";
-  } else {
+  if (texto) {
     elementoMensaje.style.display = "flex";
+  } else {
+    elementoMensaje.style.display = "none";
   }
 }
 

@@ -13,6 +13,7 @@ async function inicializarCheckout() {
 function actualizarCarrito(data) {
   const { paquetes } = data;
   const articulosEnCarrito = obtenerItemsLocalStorage();
+  renderizarMensaje();
 
   if (articulosEnCarrito === null) {
     renderizarMensaje("No hay artículos en el Carrito.");

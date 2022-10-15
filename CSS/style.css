@@ -139,6 +139,12 @@ body {
   z-index: 5;
 }
 
+.burger-counter {
+  display: none;
+  top: 34px;
+  right: 3%;
+}
+
 /* ---- MAIN STYLES ---- */
 .main-root {
   display: flex;
@@ -1039,6 +1045,10 @@ input[type=radio] {
   }
   .header-cart-btn:active {
     transform: scale(1.1);
+  }
+
+  .header-cart-counter .burger-counter {
+    display: flex;
   }
 
   /* - - - - - - - */ 

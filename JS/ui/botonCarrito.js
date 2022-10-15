@@ -5,15 +5,17 @@ function inicializarBotonCarrito() {
 }
 
 function actualizarContadorCarrito() {
-  const contador = document.querySelector(".header-cart-counter");
+  const contadores = document.querySelectorAll(".header-cart-counter");
   const itemsLS = obtenerItemsLocalStorage();
   
   if (itemsLS) {
-    contador.style.display = "flex";
-    contador.textContent = itemsLS.length;
+    contadores.forEach(contador => {
+      contador.style.display = "flex";
+      contador.textContent = itemsLS.length;
+    })
   } else {
-    contador.style.display = "none";
+    contadores.forEach(contador =>  contador.style.display = "none");
   }
 }
 
-export { inicializarBotonCarrito };
+export { inicializarBotonCarrito, actualizarContadorCarrito };
