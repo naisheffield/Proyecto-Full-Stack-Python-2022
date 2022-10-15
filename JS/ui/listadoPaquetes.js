@@ -1,10 +1,11 @@
-import paquetesDataCompleta from "../../Data/paquetes.json" assert { type: "json" };
+import { obtenerDataDeJSON } from "../storage/jsonDataFetching.js";
 import { PaqueteCard } from "./componentes/PaqueteCard.js";
 import { PaqueteDetalle } from "./componentes/PaqueteDetalle.js";
 import { agregarALocalStorage } from "../storage/local-storage.js";
 
-function inicializarListadoPaquetes() {
-  renderizarListadoPaquetes(paquetesDataCompleta);
+async function inicializarListadoPaquetes() {
+  const data = await obtenerDataDeJSON();
+  renderizarListadoPaquetes(data);
 }
 
 function renderizarListadoPaquetes(listadoPaquetes) {

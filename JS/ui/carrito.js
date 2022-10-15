@@ -1,16 +1,17 @@
-import paquetesDataCompleta from "../../Data/paquetes.json" assert { type: "json" };
+import { obtenerDataDeJSON } from "../storage/jsonDataFetching.js";
 import { ArticuloCarrito } from "./componentes/ArticuloCarrito.js";
 import { obtenerItemsLocalStorage, eliminarItemLocalStorage } from "../storage/local-storage.js";
 import { renderizarMensaje } from "./listadoPaquetes.js";
 import { calcularCosto } from "../utils/calcularCosto.js";
 import { mapearArticulosConCantidad, mapearArticulosConCosto } from "../utils/filtros-mappers.js";
 
-function inicializarCheckout() {
-  actualizarCarrito();
+async function inicializarCheckout() {
+  const data = await obtenerDataDeJSON();
+  actualizarCarrito(data);
 }
 
-function actualizarCarrito() {
-  const { paquetes } = paquetesDataCompleta;
+function actualizarCarrito(data) {
+  const { paquetes } = data;
   const articulosEnCarrito = obtenerItemsLocalStorage();
 
   if (articulosEnCarrito === null) {
