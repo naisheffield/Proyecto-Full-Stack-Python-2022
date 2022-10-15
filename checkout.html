@@ -19,7 +19,7 @@
         <img class="header-logo" src="/Multimedia/favicon_globo.png" alt="logo">
         <h1>TuriMundo</h1>
       </div>
-      <nav class="header-navbar active">
+      <nav class="header-navbar">
         <a class="header-btn" href="./index.html">Inicio</a>
         <a class="header-btn" href="./paquetes.html">Paquetes</a>
         <a class="header-btn" href="./arma-tu-viaje.html">Armá tu viaje</a>
@@ -29,7 +29,12 @@
           <div class="header-cart-counter"></div>
         </a>
       </nav>
-      <button class="header-burger-btn">MENU</button>
+      <div class="header-burger">
+        <input type="checkbox" class="header-burger-btn" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
   <main class="main-root">
@@ -61,7 +66,7 @@
             </div>
             <div class="cart-sidebar-item">
               <span>Impuestos</span>
-              <span id="costo-impuestos" style="color:gray">Calculados al finalizar la compra</span>
+              <span id="costo-impuestos" style="color:gray">0,00 US$</span>
             </div>
             <div class="cart-sidebar-subtotal">
               <span>Total</span>
