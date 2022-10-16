@@ -3,6 +3,7 @@ import { PaqueteCard } from "./componentes/PaqueteCard.js";
 import { PaqueteDetalle } from "./componentes/PaqueteDetalle.js";
 import { agregarALocalStorage } from "../storage/local-storage.js";
 import { actualizarContadorCarrito } from "./botonCarrito.js";
+import { modalHandler } from "../ui/modal.js";
 
 async function inicializarListadoPaquetes() {
   const data = await obtenerDataDeJSON();
@@ -50,7 +51,7 @@ function renderizarDetallesPaquete(dataPaquete) {
     actualizarContadorCarrito();
   }
 
-  const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB);
+  const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB, modalHandler);
   const detallesElemento = detallesPaqueteMapeado.crearElemento();
 
   seccionDetallePaquete.appendChild(detallesElemento);

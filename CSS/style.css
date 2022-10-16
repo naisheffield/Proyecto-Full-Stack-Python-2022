@@ -565,16 +565,16 @@ body {
   grid-template-columns: 24% 24% 24% 24%;
 }
 
-.pack-image-wrapper {
+.image-container {
   transition: 0.2s;
 }
-.pack-image-wrapper:hover {
-  filter: brightness(1.05) saturate(0.85);
+.image-container:hover {
+  filter: brightness(1.1) saturate(0.85);
   box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 
 .pack-image {
-  background-color: gray;
+  background-color: var(--color-secondary);
   border-radius: 4px;
   height: 100%;
   width: 100%;
@@ -600,6 +600,29 @@ body {
 .price-table-row td:nth-child(2) {
   font-size: 1.05rem;
   text-align: end;
+}
+
+/* -- MODAL -- */
+.modal-container {
+  align-items: center;
+  background-color: #1a262fd4;
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+.modal-image {
+  height: auto;
+  max-width: 90%;
+  min-width: 50%;
+  animation: fadeIn ease 0.5s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 
@@ -641,7 +664,7 @@ body {
 }
 
 .card-img-container {
-  background-color: #dcdcdc;
+  background-color: var(--color-secondary);
   border-start-start-radius: 12px;
   border-start-end-radius: 12px;
   display: flex;
