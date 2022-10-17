@@ -1,5 +1,5 @@
 class PaqueteDetalle {
-  constructor(paqueteData, callbackHandler) {
+  constructor(paqueteData, callbackHandler, modalHandler) {
     this.id = paqueteData.id;
     this.nombre = paqueteData.nombre;
     this.servicios = paqueteData.servicios;
@@ -12,6 +12,7 @@ class PaqueteDetalle {
     this.review = paqueteData.review;
     this.imagenes = paqueteData.imagenes;
     this.callbackHandler = callbackHandler;
+    this.modalHandler = modalHandler;
   }
 
   crearElemento() {
@@ -29,22 +30,23 @@ class PaqueteDetalle {
 
     this.#agregarCallbackHandler(detallesContenedor);
     this.#agregarImagenPlaceholder(detallesContenedor);
+    this.#agregarModalHandler(detallesContenedor);
 
     return detallesContenedor;
   }
 
   #crearBanner() {
     const bannerContenedor = document.createElement("figure");
-    bannerContenedor.classList.add("slider-container", "pack-banner-container");
+    bannerContenedor.classList.add("pack-banner-container");
 
     bannerContenedor.innerHTML = `
-      <div class="slide">
-        <div class="slide-overlay">
+      <div class="pack-banner-content">
+        <div class="pack-banner-overlay">
           <p>${this.fecha.conFormato}</p>
           <h3>Viajá a ${this.destino.ciudad}</h3>
           <p>Una experiencia imperdible de ${this.duracion.dias} días y ${this.duracion.noches} noches</p>
         </div>
-        <img class="slide-image" src="${this.imagenes[0]}" alt="Banner de ${this.destino.ciudad}">    
+        <img class="pack-banner-image" src="${this.imagenes[0]}" alt="Banner de ${this.destino.ciudad}">    
       </div>
     `;
 
@@ -171,19 +173,14 @@ class PaqueteDetalle {
 
     const listadoImagenes = this.imagenes.map((imagen, i) => {
         return `
-          <a 
-            class="pack-image-wrapper"
-            href=${imagen}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <div class="image-container">
             <img
               class="pack-image"
               width="100%"
               height="100%"
               src=${imagen}
               alt="imagen-${this.destino.ciudad}-${i + 1}">
-          </a>
+          </div>
         `;
       })
       .join("");
@@ -329,6 +326,14 @@ class PaqueteDetalle {
 
     for(const btn of botonesCarrito) {
       btn.addEventListener("click", (e) => this.callbackHandler(e));
+    }
+  }
+
+  #agregarModalHandler(elementoContenedor) {
+    const imagenes = elementoContenedor.getElementsByClassName("image-container");
+
+    for(const img of imagenes) {
+      img.addEventListener("click", (e) => this.modalHandler(e));
     }
   }
 }
