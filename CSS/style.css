@@ -246,7 +246,7 @@ body {
   transition: 0.2s;
 }
 
-.slide-btn {
+.slide-btn, .slide-btn-details {
   background-color: rgba(0, 0, 0, 0.1);
   border: 2px solid white;
   border-radius: 3px;

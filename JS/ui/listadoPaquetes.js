@@ -3,6 +3,7 @@ import { PaqueteCard } from "./componentes/PaqueteCard.js";
 import { PaqueteDetalle } from "./componentes/PaqueteDetalle.js";
 import { agregarALocalStorage } from "../storage/local-storage.js";
 
+
 function inicializarListadoPaquetes() {
   renderizarListadoPaquetes(paquetesDataCompleta);
 }
@@ -13,8 +14,22 @@ function renderizarListadoPaquetes(listadoPaquetes) {
   if (paquetes.length === 0) {
     renderizarMensaje("NO SE HAN ENCONTRADO PAQUETES");
   } else {
-    paquetes.forEach(paquete => renderizarPaquete(paquete));
+    paquetes.forEach(paquete => renderizarPaquete(paquete))
   }
+}
+
+function inicializarPaquetes(id) {
+  mostrarPaquete(paquetesDataCompleta, id);
+}
+
+function mostrarPaquete(listadoPaquetes, id){
+  let idPaquete = id;//"132165489";
+  let { paquetes } = listadoPaquetes;
+  paquetes.forEach(paquete => {
+    if (paquete.id == idPaquete) {
+      renderizarDetallesPaquetePromociones(paquete);
+    }
+  })
 }
 
 // implementar esta funcion con el filtro de la página Paquetes
@@ -35,6 +50,29 @@ function renderizarPaquete(dataPaquete) {
   const paqueteElementoCard = paqueteMapeado.crearElemento();
   
   elementoContenedor.appendChild(paqueteElementoCard);
+}
+
+function renderizarDetallesPaquetePromociones(dataPaquete) {
+  
+  const seccionDetallePaquete = document.querySelector("#pack-details");
+
+  seccionDetallePaquete.style.display = "block";
+  
+  // Callback placeholder.
+  // TO-DO: implementar carrito y localStorage
+  const agregarACarritoCB = (e) => {
+    e.preventDefault();
+
+    const cantidad = document.getElementById("cantidad-pasajes").value;
+    const id = document.getElementById("pack-details-container").dataset.id;
+    const paquete = { id, cantidad: parseInt(cantidad) };
+
+    agregarALocalStorage(paquete);
+  }
+
+  const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB);
+  const detallesElemento = detallesPaqueteMapeado.crearElemento();
+  seccionDetallePaquete.appendChild(detallesElemento);
 }
 
 function renderizarDetallesPaquete(dataPaquete) {
@@ -61,7 +99,6 @@ function renderizarDetallesPaquete(dataPaquete) {
 
   seccionDetallePaquete.appendChild(detallesElemento);
 }
-
 // En caso que se necesite en otra parte del sitio exportar a un archivo separado
 function renderizarMensaje(texto) {
   const elementoMensaje = document.getElementById("mensaje");
@@ -83,4 +120,4 @@ function renderizarMensaje(texto) {
 //   }
 // }
 
-export { inicializarListadoPaquetes, renderizarListadoPaquetes };
+export { inicializarListadoPaquetes, renderizarListadoPaquetes, inicializarPaquetes };
