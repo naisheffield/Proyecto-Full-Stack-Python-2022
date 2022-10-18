@@ -18,20 +18,6 @@ function renderizarListadoPaquetes(listadoPaquetes) {
   }
 }
 
-function inicializarPaquetes(id) {
-  mostrarPaquete(paquetesDataCompleta, id);
-}
-
-function mostrarPaquete(listadoPaquetes, id){
-  let idPaquete = id;//"132165489";
-  let { paquetes } = listadoPaquetes;
-  paquetes.forEach(paquete => {
-    if (paquete.id == idPaquete) {
-      renderizarDetallesPaquetePromociones(paquete);
-    }
-  })
-}
-
 // implementar esta funcion con el filtro de la página Paquetes
 // function renderizarPaquetesFiltrados(listadoPaquetes) {
 //   eliminarComponentesHijos("grilla-paquetes");
@@ -50,29 +36,6 @@ function renderizarPaquete(dataPaquete) {
   const paqueteElementoCard = paqueteMapeado.crearElemento();
   
   elementoContenedor.appendChild(paqueteElementoCard);
-}
-
-function renderizarDetallesPaquetePromociones(dataPaquete) {
-  
-  const seccionDetallePaquete = document.querySelector("#pack-details");
-
-  seccionDetallePaquete.style.display = "block";
-  
-  // Callback placeholder.
-  // TO-DO: implementar carrito y localStorage
-  const agregarACarritoCB = (e) => {
-    e.preventDefault();
-
-    const cantidad = document.getElementById("cantidad-pasajes").value;
-    const id = document.getElementById("pack-details-container").dataset.id;
-    const paquete = { id, cantidad: parseInt(cantidad) };
-
-    agregarALocalStorage(paquete);
-  }
-
-  const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB);
-  const detallesElemento = detallesPaqueteMapeado.crearElemento();
-  seccionDetallePaquete.appendChild(detallesElemento);
 }
 
 function renderizarDetallesPaquete(dataPaquete) {
@@ -119,5 +82,42 @@ function renderizarMensaje(texto) {
 //     elementoContenedor.removeChild(elementoContenedor.lastChild);
 //   }
 // }
+
+function inicializarPaquetes(id) {
+  mostrarPaquete(paquetesDataCompleta, id);
+}
+
+function mostrarPaquete(listadoPaquetes, id){
+  let idPaquete = id;//"132165489";
+  let { paquetes } = listadoPaquetes;
+  paquetes.forEach(paquete => {
+    if (paquete.id == idPaquete) {
+      renderizarDetallesPaquetePromociones(paquete);
+    }
+  })
+}
+
+function renderizarDetallesPaquetePromociones(dataPaquete) {
+  
+  const seccionDetallePaquete = document.querySelector("#pack-details");
+
+  seccionDetallePaquete.style.display = "block";
+  
+  // Callback placeholder.
+  // TO-DO: implementar carrito y localStorage
+  const agregarACarritoCB = (e) => {
+    e.preventDefault();
+
+    const cantidad = document.getElementById("cantidad-pasajes").value;
+    const id = document.getElementById("pack-details-container").dataset.id;
+    const paquete = { id, cantidad: parseInt(cantidad) };
+
+    agregarALocalStorage(paquete);
+  }
+
+  const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB);
+  const detallesElemento = detallesPaqueteMapeado.crearElemento();
+  seccionDetallePaquete.appendChild(detallesElemento);
+}
 
 export { inicializarListadoPaquetes, renderizarListadoPaquetes, inicializarPaquetes };
