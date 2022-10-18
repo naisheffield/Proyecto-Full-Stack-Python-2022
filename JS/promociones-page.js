@@ -1,20 +1,16 @@
-// 132165489 - Canada
-// 123456789 - Maldivas
-// 514135499 - Machu Picchu
-// 165498667 - Bora Bora
-// 876131224 - Italia
+import { inicializarPaquete } from "./ui/detallesPaquete.js";
+import { inicializarBotonCarrito } from "./ui/botonCarrito.js";
+import { inicializarBotonBurgerMenu } from "./ui/botonBurgerMenu.js";
+import { inicializarModal } from "./ui/modal.js";
 
-import { inicializarPaquetes } from "./ui/listadoPaquetes.js"
+function inicializar() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
 
-function get () {
-  // (A) GET THE PARAMETERS
-  var params = new URLSearchParams(window.location.search),
-      id = params.get("id");
-
-  // (B) IT WORKS!
-  inicializarPaquetes(id);
+  inicializarPaquete(id);
+  inicializarBotonCarrito();
+  inicializarBotonBurgerMenu();
+  inicializarModal();
 }
 
-window.addEventListener('load', (event) => {
-  get()
-});
+window.addEventListener('load', inicializar);
