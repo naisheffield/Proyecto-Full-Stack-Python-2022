@@ -174,16 +174,18 @@ body {
 }
 
 .home-slider .slider-container {
-  width: 500%;
+  align-items: center;
+  background-color: var(--color-secondary);
   display: flex;
   flex-flow: row nowrap;
+  height: 100%;
+  justify-content: space-between;
+  margin-left: -100%;
+  margin: auto;
   max-height: 500px;
   overflow: hidden;
-  margin: auto;
   position: relative;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: -100%;
+  width: 500%;
 
   transition: all .5s ease;
   transform: translateX(0%); /* Posición inicial del carrusel */
@@ -266,6 +268,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   padding: 0.5rem;
+  text-decoration: none;
   transition: 0.4s;
   position: absolute;
 }
@@ -372,9 +375,7 @@ body {
 
 .pack-details-section {
   background-color: white;
-  /* display: none --> valor default */
-  /* display: block; */
-  display: none;
+  display: block;
 }
 
 .pack-details-navigation {
@@ -611,11 +612,13 @@ body {
   justify-content: center;
   position: fixed;
   top: 0;
+  width: 100%;
   z-index: 5;
 }
 
 .modal-image {
   height: auto;
+  max-height: 80%;
   max-width: 90%;
   min-width: 50%;
   animation: fadeIn ease 0.5s;
@@ -649,11 +652,13 @@ body {
   background-color: white;
   border: 1px solid #dcdcdc;
   border-radius: 12px;
+  color: black;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   max-width: 400px;
+  text-decoration: none;
   transition: 0.30s;
   width: -webkit-fill-available; /* Verificar la implementacion de multiples vendedores */
   width: -moz-available;

@@ -13,14 +13,14 @@
   <title>Bienvenidos - TuriMundo</title>
 </head>
 <body>
-  <header class="header-root">
+  <header id="header" class="header-root">
     <div class="header-container">
       <div class="logo">
         <img class="header-logo" src="Multimedia/favicon_globo.png" alt="logo">
         <h1>TuriMundo</h1>
       </div>
-      <nav class="header-navbar active">
-        <a class="header-btn" href="index.html">Inicio</a>
+      <nav class="header-navbar">
+        <a id="inicio" class="header-btn" href="./index.html">Inicio</a>
         <a class="header-btn" href="paquetes.html">Paquetes</a>
         <a class="header-btn" href="arma-tu-viaje.html">Armá tu viaje</a>
         <a class="header-btn" href="contacto.html">Contacto</a>
@@ -29,78 +29,23 @@
           <div class="header-cart-counter"></div>
         </a>
       </nav>
-      <button class="header-burger-btn">MENU</button>
+      <div class="header-burger">
+        <div class="header-cart-counter burger-counter"></div>
+        <input type="checkbox" class="header-burger-btn" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
   <main class="main-root">
-
     <div class="main-container">
       
-      <!-- Carrusel -->
       <section class="home-slider"> 
         <h2><b>OFERTAS DE TEMPORADA</b></h2>
-        <!-- Slides del Carrusel -->
-        <div class="slider-container" id="slider-container">
-
-          <!-- Slide 1 -->
-          <div class="slide">
-            <div class="slide-overlay">
-              <p>19 DE OCTUBRE</p>
-              <h3>Viajá a las Maldivas</h3>
-              <p>Una experiencia imperdible de 5 días y 4 noches en un paraíso terrenal</p>
-              <button id="123456789" class="slide-btn-details">VER DETALLES</button>
-            </div>
-            <img class="slide-image" src="Multimedia/imagenes/location-pic-01.jpeg" alt="travel-picture">
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="slide">
-            <div class="slide-overlay">
-              <p>25 DE OCTUBRE</p>
-              <h3>Viajá a Canadá</h3>
-              <p>Viví las maravillas naturales de Canadá por 12 días y 11 noches</p>
-              <button id="132165489" class="slide-btn-details">VER DETALLES</button>
-            </div>
-            <img class="slide-image" src="Multimedia/imagenes/canada.jpg" alt="travel-picture">
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="slide">
-            <div class="slide-overlay">
-              <p>10 DE NOVIEMBRE</p>
-              <h3>Viajá a Machu Picchu</h3>
-              <p>Conocé las ruinas Incas y todos sus secretos por 8 días y 7 noches</p>
-              <button id="514135499" class="slide-btn-details">VER DETALLES</button>
-            </div>
-            <img class="slide-image" src="Multimedia/imagenes/machu-picchu.jpg" alt="travel-picture">
-          </div>
-
-          <!-- Slide 4 -->
-          <div class="slide">
-            <div class="slide-overlay">
-              <p>25 DE NOVIEMBRE</p>
-              <h3>Viajá a los islotes de Bora Bora</h3>
-              <p>Un destino exótico para conocer y disfrutar por 10 días y 9 noches</p>
-              <button id="165498667" class="slide-btn-details">VER DETALLES</button>
-            </div>
-            <img class="slide-image" src="Multimedia/imagenes/bora-bora.jpg" alt="travel-picture">
-          </div>
-
-          <!-- Slide 5 -->
-          <div class="slide">
-            <div class="slide-overlay">
-              <p>29 DE OCTUBRE</p>
-              <h3>Viajá a Italia</h3>
-              <p>Un recorrido por Venecia y Roma memorable por 10 días y 9 noches</p>
-              <button id="876131224" class="slide-btn-details">VER DETALLES</button>
-            </div>
-            <img class="slide-image" src="Multimedia/imagenes/venecia.jpg" alt="travel-picture">
-          </div>
-        </div>
-
+        <div class="slider-container" id="slider-container"></div>
         <div class="slide-btn slide-btn-right" id="btn-right">&#62;</div>
         <div class="slide-btn slide-btn-left" id="btn-left">&#60;</div>
-
       </section>
 
       <section class="home-info">
@@ -124,7 +69,6 @@
           <p>¿Tenés algunda duda particular? <a href="contacto.html"> ¡Contactanos!</a> Nos pondremos en contacto con vos a la brevedad.</p>
         </div>
       </section>
-      <br><br><br><br><br><br><br>
     </div>
   </main>
   <footer class="footer-root">
