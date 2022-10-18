@@ -13,81 +13,53 @@
     <title>TuriMundo - Checkout</title>
 </head>
 <body>
-  <header class="header-root">
+  <header id="header" class="header-root">
     <div class="header-container">
       <div class="logo">
         <img class="header-logo" src="Multimedia/favicon_globo.png" alt="logo">
         <h1>TuriMundo</h1>
       </div>
-      <nav class="header-navbar active">
-        <a class="header-btn" href="index.html">Inicio</a>
-        <a class="header-btn" href="paquetes.html">Paquetes</a>
-        <a class="header-btn" href="arma-tu-viaje.html">Armá tu viaje</a>
-        <a class="header-btn" href="contacto.html">Contacto</a>
-        <a class="header-cart-btn" href="checkout.html">
-          <img id="empty-cart-icon" src="Multimedia/carrito-vacio.png" alt="carrito">
+      <nav class="header-navbar">
+        <a id="inicio" class="header-btn" href="./index.html">Inicio</a>
+        <a class="header-btn" href="./paquetes.html">Paquetes</a>
+        <a class="header-btn" href="./arma-tu-viaje.html">Armá tu viaje</a>
+        <a class="header-btn" href="./contacto.html">Contacto</a>
+        <a class="header-cart-btn" href="./checkout.html">
+          <img id="empty-cart-icon" src="/Multimedia/carrito-vacio.png" alt="carrito">
           <div class="header-cart-counter"></div>
         </a>
       </nav>
-      <button class="header-burger-btn">MENU</button>
+      <div class="header-burger">
+        <div class="header-cart-counter burger-counter"></div>
+        <input type="checkbox" class="header-burger-btn" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
   <main class="main-root">
     <div class="main-container">
       <h2>CARRITO</h2>
       <section class="cart-container">
-        <div class="cart-list">
-          <div class="cart-item-container">
-            <div class="img-container">
-              <img class="card-img" src="https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg" alt="item image">
-            </div>
-            <div class="item-info-container">
-              <div class="item-title">
-                <h3>Las Maldivas - Noviembre</h3>
-                <span>5000 US$ + impuestos</span>
-              </div>
-              <span>Malé | Maldivas | Sur asiático</span>
-              <span>8 días | 7 noches</span>
-              <ul>
-                <li>Pasajes aéreos internacionales</li>
-                <li>Traslados de llegada y salida</li>
-                <li>Alojamiento en categoría turista</li>
-                <li>Desayuno diario</li>
-                <li>Guía de habla hispana durante todo el recorrido</li>
-                <li>Visitas según itinerario</li>
-              </ul>
-              <button>Eliminar</button>
-            </div>
+        <div>
+          <div id="cart-list" class="cart-list">
           </div>
-          <div class="cart-item-container">
-            <div class="img-container">
-              <img class="card-img" src="https://images.pexels.com/photos/3601425/pexels-photo-3601425.jpeg" alt="item image">
-            </div>
-            <div class="item-info-container">
-              <div class="item-title">
-                <h3>Las Maldivas - Noviembre</h3>
-                <span>5000 US$ + impuestos</span>
-              </div>
-              <span>Malé | Maldivas | Sur asiático</span>
-              <span>8 días | 7 noches</span>
-              <ul>
-                <li>Pasajes aéreos internacionales</li>
-                <li>Traslados de llegada y salida</li>
-                <li>Alojamiento en categoría turista</li>
-                <li>Desayuno diario</li>
-                <li>Guía de habla hispana durante todo el recorrido</li>
-                <li>Visitas según itinerario</li>
-              </ul>
-              <button>Eliminar</button>
-            </div>
-          </div>
+          <div id="mensaje" class="cart-list-message"></div>
         </div>
+        <!-- RESPONSIVE STYLES SIDEBAR
+          padding: 1rem;
+          border: 1px solid rgb(200 200 200);
+          border-radius: 8px;
+        -->
         <div class="cart-sidebar-container">
           <div class="cart-sidebar">
             <h3 class="cart-sidebar-title">RESUMEN</h3>
             <div class="cart-sidebar-item">
               <span>Precio</span>
-              <span>50,00 US$</span>
+              <span id="costo-subtotal">0,00 US$</span>
+            </div>
+            <div id="articulos-listado">
             </div>
             <div class="cart-sidebar-item">
               <span>Descuentos</span>
@@ -95,11 +67,11 @@
             </div>
             <div class="cart-sidebar-item">
               <span>Impuestos</span>
-              <span style="color:gray">Calculados al finalizar la compra</span>
+              <span id="costo-impuestos" style="color:gray">0,00 US$</span>
             </div>
             <div class="cart-sidebar-subtotal">
-              <span>Subtotal</span>
-              <span>50,00 US$</span>
+              <span>Total</span>
+              <span id="costo-total">0,00 US$</span>
             </div>
             <button class="cart-sidebar-btn">CAJA</button>
           </div>
@@ -120,5 +92,6 @@
       </nav>
     </div>
   </footer>
+  <script src="./JS/checkout-page.js" type="module"></script>
 </body>
 </html>

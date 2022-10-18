@@ -1,10 +1,13 @@
-import paquetesDataCompleta from "../../Data/paquetes.json" assert { type: "json" };
+import { obtenerDataDeJSON } from "../storage/jsonDataFetching.js";
 import { PaqueteCard } from "./componentes/PaqueteCard.js";
 import { PaqueteDetalle } from "./componentes/PaqueteDetalle.js";
 import { agregarALocalStorage } from "../storage/local-storage.js";
+import { actualizarContadorCarrito } from "./botonCarrito.js";
+import { modalHandler } from "../ui/modal.js";
 
-function inicializarListadoPaquetes() {
-  renderizarListadoPaquetes(paquetesDataCompleta);
+async function inicializarListadoPaquetes() {
+  const data = await obtenerDataDeJSON();
+  renderizarListadoPaquetes(data);
 }
 
 function renderizarListadoPaquetes(listadoPaquetes) {
@@ -13,16 +16,9 @@ function renderizarListadoPaquetes(listadoPaquetes) {
   if (paquetes.length === 0) {
     renderizarMensaje("NO SE HAN ENCONTRADO PAQUETES");
   } else {
-    paquetes.forEach(paquete => renderizarPaquete(paquete));
+    paquetes.forEach(paquete => renderizarPaquete(paquete))
   }
 }
-
-// implementar esta funcion con el filtro de la página Paquetes
-// function renderizarPaquetesFiltrados(listadoPaquetes) {
-//   eliminarComponentesHijos("grilla-paquetes");
-//   renderizarMensaje("");
-//   renderizarListadoPaquetes(listadoPaquetes);
-// }
 
 function renderizarPaquete(dataPaquete) {
   const elementoContenedor = document.getElementById("grilla-paquetes");
@@ -44,6 +40,55 @@ function renderizarDetallesPaquete(dataPaquete) {
   seccionListadoPaquetes.style.display = "none";
   seccionDetallePaquete.style.display = "block";
 
+  const agregarACarritoCB = (e) => {
+    e.preventDefault();
+
+    const cantidad = document.getElementById("cantidad-pasajes").value;
+    const id = document.getElementById("pack-details-container").dataset.id;
+    const paquete = { id, cantidad: parseInt(cantidad) };
+
+    agregarALocalStorage(paquete);
+    actualizarContadorCarrito();
+  }
+
+  const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB, modalHandler);
+  const detallesElemento = detallesPaqueteMapeado.crearElemento();
+
+  seccionDetallePaquete.appendChild(detallesElemento);
+}
+
+export function renderizarMensaje(texto) {
+  const elementoMensaje = document.getElementById("mensaje");
+  elementoMensaje.textContent = texto;
+
+  if (texto) {
+    elementoMensaje.style.display = "flex";
+  } else {
+    elementoMensaje.style.display = "none";
+  }
+}
+
+async function inicializarPaquetes(id) {
+  const data = await obtenerDataDeJSON();
+  mostrarPaquete( data, id);
+}
+
+function mostrarPaquete(listadoPaquetes, id){
+  let idPaquete = id;//"132165489";
+  let { paquetes } = listadoPaquetes;
+  paquetes.forEach(paquete => {
+    if (paquete.id == idPaquete) {
+      renderizarDetallesPaquetePromociones(paquete);
+    }
+  })
+}
+
+function renderizarDetallesPaquetePromociones(dataPaquete) {
+  
+  const seccionDetallePaquete = document.querySelector("#pack-details");
+
+  seccionDetallePaquete.style.display = "block";
+  
   // Callback placeholder.
   // TO-DO: implementar carrito y localStorage
   const agregarACarritoCB = (e) => {
@@ -58,29 +103,7 @@ function renderizarDetallesPaquete(dataPaquete) {
 
   const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB);
   const detallesElemento = detallesPaqueteMapeado.crearElemento();
-
   seccionDetallePaquete.appendChild(detallesElemento);
 }
 
-// En caso que se necesite en otra parte del sitio exportar a un archivo separado
-function renderizarMensaje(texto) {
-  const elementoMensaje = document.getElementById("mensaje");
-  elementoMensaje.textContent = texto;
-
-  if (texto.length === 0) {
-    elementoMensaje.style.display = "none";
-  } else {
-    elementoMensaje.style.display = "block";
-  }
-}
-
-// --> Implementar junto con el filtro
-// function eliminarComponentesHijos(idElementoContenedor) {
-//   const elementoContenedor = document.getElementById(idElementoContenedor);
-
-//   while(elementoContenedor.childElementCount > 0) {
-//     elementoContenedor.removeChild(elementoContenedor.lastChild);
-//   }
-// }
-
-export { inicializarListadoPaquetes, renderizarListadoPaquetes };
+export { inicializarListadoPaquetes, renderizarListadoPaquetes, inicializarPaquetes };
