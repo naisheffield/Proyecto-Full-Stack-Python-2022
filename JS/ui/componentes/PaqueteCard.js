@@ -1,5 +1,5 @@
 class PaqueteCard {
-  constructor(paqueteData, onClickCallback) {
+  constructor(paqueteData) {
     this.id = paqueteData.id;
     this.nombre = paqueteData.nombre;
     this.imageURL = paqueteData.imagenes[0];
@@ -7,14 +7,14 @@ class PaqueteCard {
     this.duracion = paqueteData.duracion;
     this.review = paqueteData.review;
     this.precio = paqueteData.precio;
-    this.onClickCallback = onClickCallback;
   }
 
   crearElemento() {
-    const cardContenedor = document.createElement('div');
+    const cardContenedor = document.createElement('a');
+    cardContenedor.href = `promociones.html?id=${this.id}`;
+    cardContenedor.target = "_blank";
     cardContenedor.id = `pack-${this.id}`;
     cardContenedor.className = 'card-container'; 
-    cardContenedor.addEventListener('click', this.onClickCallback);
 
     cardContenedor.innerHTML = `
       <div class="card-img-container">
