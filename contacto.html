@@ -10,44 +10,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/style.css">
-    <script src="./JS/validaciones.js"></script>
     <title>Contactanos</title>
 </head>
 <body>
-  <header class="header-root">
+  <header id="header" class="header-root">
     <div class="header-container">
       <div class="logo">
         <img class="header-logo" src="Multimedia/favicon_globo.png" alt="logo">
         <h1>TuriMundo</h1>
       </div>
-      <nav class="header-navbar active">
-        <a class="header-btn" href="index.html">Inicio</a>
-        <a class="header-btn" href="paquetes.html">Paquetes</a>
-        <a class="header-btn" href="arma-tu-viaje.html">Armá tu viaje</a>
-        <a class="header-btn" href="contacto.html">Contacto</a>
-        <a class="header-cart-btn" href="checkout.html">
-          <img id="empty-cart-icon" src="Multimedia/carrito-vacio.png" alt="carrito">
+      <nav class="header-navbar">
+        <a id="inicio" class="header-btn" href="./index.html">Inicio</a>
+        <a class="header-btn" href="./paquetes.html">Paquetes</a>
+        <a class="header-btn" href="./arma-tu-viaje.html">Armá tu viaje</a>
+        <a class="header-btn" href="./contacto.html">Contacto</a>
+        <a class="header-cart-btn" href="./checkout.html">
+          <img id="empty-cart-icon" src="/Multimedia/carrito-vacio.png" alt="carrito">
           <div class="header-cart-counter"></div>
         </a>
       </nav>
-      <button class="header-burger-btn">MENU</button>
+      <div class="header-burger">
+        <div class="header-cart-counter burger-counter"></div>
+        <input type="checkbox" class="header-burger-btn" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
   <main class="main-root">
     <div class="main-container">
       <section class="contact-form">
-        <form onsubmit="return validacion_contacto();">
+        <form id="form" data-type="contacto">
           <h2>Envianos tu mensaje</h2>
-          <input type="text" name="nombre" placeholder="Nombre" id="nombre"> <br> <br>
-          <input type="text" name="apellido" placeholder="Apellido" id="apellido"> <br> <br>
-          <input type="email" name="email" placeholder="Email" id="email"> <br> <br>
-          <input type="text" name="pais" placeholder="País" id="pais"> <br> <br>
-          <input type="number" name="telefono" placeholder="Teléfono" id="telefono"> <br> <br>
-          <textarea name="consulta" placeholder="Escriba aquí su consulta" id="consulta"></textarea>
-    
-          <br> <br>
-    
-          <input type="submit" value="Enviar" id="boton">
+          <input type="text" name="nombre" placeholder="Nombre" id="nombre" maxlength="255" required>
+            <br><br>
+          <input type="text" name="apellido" placeholder="Apellido" id="apellido" maxlength="255" required>
+            <br><br>
+          <input type="email" name="email" placeholder="Email" id="email" maxlength="255" required>
+            <br><br>
+          <input type="text" name="lugar" placeholder="País" id="lugar" maxlength="255" required>
+            <br><br>
+          <input type="text" name="telefono" placeholder="Teléfono" id="telefono" maxlength="255">
+            <br><br>
+          <textarea name="consulta" placeholder="Escriba aquí su consulta" id="consulta" maxlength="1020" required></textarea>
+            <br><br>
+          <input type="submit" value="Enviar" id="submit-boton">
         </form> 
       </section>
     </div>
@@ -65,5 +73,6 @@
       </nav>
     </div>
   </footer>
+  <script src="JS/formularios-page.js" type="module"></script>
 </body>
 </html>

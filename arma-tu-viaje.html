@@ -4,173 +4,178 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/523c5c29a5.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="Multimedia/favicon_globo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/style.css">
-    <script src="./JS/validaciones.js"></script>
     <title>Organizá tu viaje</title>
 </head>
 <body>
-  <header class="header-root">
+  <header id="header" class="header-root">
     <div class="header-container">
       <div class="logo">
         <img class="header-logo" src="Multimedia/favicon_globo.png" alt="logo">
         <h1>TuriMundo</h1>
       </div>
-      <nav class="header-navbar active">
-        <a class="header-btn" href="index.html">Inicio</a>
-        <a class="header-btn" href="paquetes.html">Paquetes</a>
-        <a class="header-btn" href="arma-tu-viaje.html">Armá tu viaje</a>
-        <a class="header-btn" href="contacto.html">Contacto</a>
-        <a class="header-cart-btn" href="checkout.html">
-          <img id="empty-cart-icon" src="Multimedia/carrito-vacio.png" alt="carrito">
+      <nav class="header-navbar">
+        <a id="inicio" class="header-btn" href="./index.html">Inicio</a>
+        <a class="header-btn" href="./paquetes.html">Paquetes</a>
+        <a class="header-btn" href="./arma-tu-viaje.html">Armá tu viaje</a>
+        <a class="header-btn" href="./contacto.html">Contacto</a>
+        <a class="header-cart-btn" href="./checkout.html">
+          <img id="empty-cart-icon" src="/Multimedia/carrito-vacio.png" alt="carrito">
           <div class="header-cart-counter"></div>
         </a>
       </nav>
-      <button class="header-burger-btn">MENU</button>
+      <div class="header-burger">
+        <div class="header-cart-counter burger-counter"></div>
+        <input type="checkbox" class="header-burger-btn" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
   <main class="main-root">
     <div class="main-container-travel">
-        <h2>ARMA TU VIAJE!</h2>
+      <h2>ARMA TU VIAJE!</h2>
 
-        <form onsubmit="return validacion_viaje();">
-          <div class="titulo">Datos del solicitante</div>
-          <div class="fields">
-            <div class="input-field">
-              <label>Nombre completo</label>
-              <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido">
-            </div>  
-            <div class="input-field">
-              <label>Email</label>
-              <input type="email" name="email" id="email" placeholder="Email">
-            </div>
-            <div class="input-field">
-              <label>Teléfono</label>
-              <input type="number" name="telefono" id="telefono" placeholder="Teléfono">
-            </div>
+      <form id="form" data-type="viaje">
+        <div class="titulo">Datos del solicitante</div>
+        <div class="fields">
+          <div class="input-field">
+            <label>Nombre completo</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido" maxlength="255" required>
           </div>  
-          
-          <div class="titulo">Personas que viajan</div>
-          <div class="fields">
-            <div class="input-field">
-              <label>Adultos</label>
-              <select name="adultos" id="opciones">
-                <option selected value="">Cantidad de adultos</option>
-                <option value="1">0 Adultos</option>
-                <option value="2">1 Adulto</option>
-                <option value="3">2 Adultos</option>
-                <option value="4">3 Adultos</option>
-                <option value="5">4 Adultos</option>
-                <option value="6">5 Adultos</option>
-                <option value="7">6 Adultos</option>
-                <option value="8">7 Adultos</option>
-                <option value="9">8 Adultos</option>
-                <option value="10">9 Adultos</option>
-                <option value="11">10 Adultos</option>
-              </select>
-            </div>
-            <div class="input-field">
-              <label>Menores</label>
-              <select name="menores" id="opciones">
-                <option selected value="">Cantidad de menores</option>
-                <option value="1">0 Menores</option>
-                <option value="2">1 Menor</option>
-                <option value="3">2 Menores</option>
-                <option value="4">3 Menores</option>
-                <option value="5">4 Menores</option>
-                <option value="6">5 Menores</option>
-                <option value="7">6 Menores</option>
-                <option value="8">7 Menores</option>
-                <option value="9">8 Menores</option>
-                <option value="10">9 Menores</option>
-                <option value="11">10 Menores</option>
-              </select>
-            </div>
-            <div class="input-field">
-              <label>Bebes</label>
-              <select name="bebes" id="opciones">
-                <option selected value="">Cantidad de bebes</option>
-                <option value="1">0 Bebes</option>
-                <option value="2">1 Bebe</option>
-                <option value="3">2 Bebes</option>
-                <option value="4">3 Bebes</option>
-                <option value="5">4 Bebes</option>
-                <option value="6">5 Bebes</option>
-                <option value="7">6 Bebes</option>
-                <option value="8">7 Bebes</option>
-                <option value="9">8 Bebes</option>
-                <option value="10">9 Bebes</option>
-                <option value="11">10 Bebes</option>
-              </select>
-            </div>
+          <div class="input-field">
+            <label>Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" maxlength="255" required>
           </div>
-          
-          <div class="titulo">Destino</div>
-          <div class="fields">
-            <div class="input-field">
-              <label>Ciudad de destino</label>
-              <input type="text" name="destino" id="destino" placeholder="Ciudad de destino">
-            </div>
-            <div class="input-field">
-              <label>Fecha de partida</label>
-              <input type="date" name="fecha de partida" id="fecha de partida">
-            </div>
-            <div class="input-field">
-              <label>Fecha de regreso</label>
-              <input type="date" name="fecha de regreso" id="fecha de regreso">
-            </div>
-          </div>  
-
-          <div class="titulo">Hotel</div>
-          <div class="fields">
-            <div class="input-field">
-              <label>¿Incluir hotel?</label>
-              <div><input type="radio" name="hotel" value="Si">Si</div>
-              <div><input type="radio" name="hotel" value="No">No</div>
-            </div>
-            <div class="input-field">
-              <label>Categoría</label>
-              <select name="categoría" id="categoria">
-                <option selected value="">No indicado</option>
-                <option value="1">1 Estrella</option>
-                <option value="2">2 Estrellas</option>
-                <option value="3">3 Estrellas</option>
-                <option value="4">4 Estrellas</option>
-                <option value="5">5 Estrellas</option>
-              </select>
-            </div>
+          <div class="input-field">
+            <label>Teléfono</label>
+            <input type="number" name="telefono" id="telefono" placeholder="Teléfono">
           </div>
-
-          <div class="titulo">Tipo de Paquete</div>
-          <div class="fields">
-            <div class="input-field">
-              <label>Tipo de Paquete</label>
-              <select name="paquete" id="paquete">
-                <option selected value="">No indicado</option>
-                <option value="1">Aéreo</option>
-                <option value="2">Terrestre</option>
-                <option value="3">Aéreo + Terrestre</option>
-              </select>
-            </div>
-            <div class="input-field">
-              <label>Comidas especiales</label>
-              <input type="text" name="comidas" id="comidas" placeholder="Comidas especiales">
-            </div>
-            <div class="input-field">
-              <label>Presupuesto por persona</label>
-              <input type="number" name="presupuesto" id="presupuesto" placeholder="$ Presupuesto">
-            </div>
+        </div>  
+        
+        <div class="titulo">Personas que viajan</div>
+        <div class="fields">
+          <div class="input-field">
+            <label>Adultos</label>
+            <select name="adultos" class="opciones" required>
+              <option selected value="0">Cantidad de adultos</option>
+              <option value="1">1 Adulto</option>
+              <option value="2">2 Adultos</option>
+              <option value="3">3 Adultos</option>
+              <option value="4">4 Adultos</option>
+              <option value="5">5 Adultos</option>
+              <option value="6">6 Adultos</option>
+              <option value="7">7 Adultos</option>
+              <option value="8">8 Adultos</option>
+              <option value="9">9 Adultos</option>
+              <option value="10">10 Adultos</option>
+            </select>
           </div>
+          <div class="input-field">
+            <label>Menores</label>
+            <select name="menores" class="opciones">
+              <option selected value="0">Cantidad de menores</option>
+              <option value="1">1 Menor</option>
+              <option value="2">2 Menores</option>
+              <option value="3">3 Menores</option>
+              <option value="4">4 Menores</option>
+              <option value="5">5 Menores</option>
+              <option value="6">6 Menores</option>
+              <option value="7">7 Menores</option>
+              <option value="8">8 Menores</option>
+              <option value="9">9 Menores</option>
+              <option value="10">10 Menores</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label>Bebes</label>
+            <select name="bebes" class="opciones">
+              <option selected value="0">Cantidad de bebes</option>
+              <option value="1">1 Bebe</option>
+              <option value="2">2 Bebes</option>
+              <option value="3">3 Bebes</option>
+              <option value="4">4 Bebes</option>
+              <option value="5">5 Bebes</option>
+              <option value="6">6 Bebes</option>
+              <option value="7">7 Bebes</option>
+              <option value="8">8 Bebes</option>
+              <option value="9">9 Bebes</option>
+              <option value="10">10 Bebes</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="titulo">Destino</div>
+        <div class="fields">
+          <div class="input-field">
+            <label>Ciudad de destino</label>
+            <input type="text" name="lugar" id="lugar" placeholder="Ciudad de destino" maxlength="255" required>
+          </div>
+          <div class="input-field">
+            <label>Fecha de partida</label>
+            <input type="date" name="fecha_de_partida" id="fecha de partida">
+          </div>
+          <div class="input-field">
+            <label>Fecha de regreso</label>
+            <input type="date" name="fecha_de_regreso" id="fecha de regreso">
+          </div>
+        </div>  
 
-          <input type="submit" value="Enviar" id="boton">
+        <div class="titulo">Hotel</div>
+        <div class="fields">
+          <div class="input-field">
+            <div>¿Incluir hotel?</div>
+            <label for="hotel">
+              <input type="radio" name="hotel" value="Si">
+              Si
+            </label>
+            <label for="hotel">
+              <input type="radio" name="hotel" value="No">
+              No
+            </label>
+          </div>
+          <div class="input-field">
+            <label>Categoría</label>
+            <select name="categoria" id="categoria">
+              <option selected value="">No indicado</option>
+              <option value="1">1 Estrella</option>
+              <option value="2">2 Estrellas</option>
+              <option value="3">3 Estrellas</option>
+              <option value="4">4 Estrellas</option>
+              <option value="5">5 Estrellas</option>
+            </select>
+          </div>
+        </div>
 
-          
-        </form>
+        <div class="titulo">Tipo de Paquete</div>
+        <div class="fields">
+          <div class="input-field">
+            <label>Tipo de Paquete</label>
+            <select name="paquete" id="paquete" required>
+              <option selected value="">No indicado</option>
+              <option value="1">Aéreo</option>
+              <option value="2">Terrestre</option>
+              <option value="3">Aéreo + Terrestre</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label>Comidas especiales</label>
+            <input type="text" name="comidas" id="comidas" placeholder="Comidas especiales" maxlength="510">
+          </div>
+          <div class="input-field">
+            <label>Presupuesto por persona</label>
+            <input type="number" name="presupuesto" id="presupuesto" placeholder="$ Presupuesto" min="1" max="100000000">
+          </div>
+        </div>
 
+        <input type="submit" value="Enviar" id="submit-boton">
+      </form>
+      <div id="mensaje" class="form-list-message"></div>
     </div>
     
   </main>
@@ -187,5 +192,6 @@
       </nav>
     </div>
   </footer>
+  <script src="JS/formularios-page.js" type="module"></script>
 </body>
 </html>
