@@ -180,8 +180,8 @@ body {
   flex-flow: row nowrap;
   height: 100%;
   justify-content: space-between;
-  margin-left: -100%;
   margin: auto;
+  margin-left: -100%; /* margin-left DEBE quedar por debajo de margin para que éste no lo sobreescriba */
   max-height: 500px;
   overflow: hidden;
   position: relative;

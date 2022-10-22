@@ -18,7 +18,8 @@ function renderizarCarrusel(listadoPaquetes) {
     // renderizarMensaje("NO SE HAN ENCONTRADO PAQUETES");
   } else {
     const sliderContainer = document.getElementById("slider-container");
-    sliderContainer.style.width = `${paquetesPromocionados.length * 100}%`;
+    const defaultSlides = sliderContainer.childElementCount;
+    sliderContainer.style.width = `${(paquetesPromocionados.length + defaultSlides) * 100}%`;
 
     paquetesPromocionados.forEach(paquete => renderizarSlideCarrusel(paquete));
   }
@@ -40,12 +41,12 @@ function agregarComportamientoCarrusel() {
   const sliderBtnRight = document.querySelector('#btn-right');
   const sliderBtnLeft = document.querySelector('#btn-left');
   const sliderContainer = document.querySelector('.slider-container');
-  sliderContainer.insertAdjacentElement('afterbegin', sliderContainer.lastChild);
+  sliderContainer.insertAdjacentElement('afterbegin', sliderContainer.lastElementChild);
 
   let transitionInterval = setInterval(nextSlide, AUTO_TRANSITION);
 
   function nextSlide(){
-    const firstSlide = sliderContainer.firstChild;
+    const firstSlide = sliderContainer.firstElementChild;
     sliderContainer.style.marginLeft = '-200%';
     sliderContainer.style.transition = `all ${TRANSITION}ms`;
 
@@ -57,7 +58,7 @@ function agregarComportamientoCarrusel() {
   }
 
   function prevSlide(){
-    let lastSlide = sliderContainer.lastChild;
+    let lastSlide = sliderContainer.lastElementChild;
     sliderContainer.style.marginLeft = '0%';
     sliderContainer.style.transition = `all ${TRANSITION}ms`;
 
