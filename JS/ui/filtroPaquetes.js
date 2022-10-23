@@ -12,10 +12,25 @@ function filtroHandler(e, data) {
   let { paquetes } = data;
   const filtro = document.getElementById("filtro");
   const parametros = new FormData(filtro);
-  
-  const paquetesFiltrados = paquetes.filter(paquete => filtrarPaquetes(paquete, parametros));
 
-  renderizarListadoPaquetes({ paquetes: paquetesFiltrados });
+  const paquetesFiltrados = paquetes.filter(paquete => filtrarPaquetes(paquete, parametros));
+  const paquetesOrdenados = ordenarPaquetesPorPrecio(paquetesFiltrados, parametros.get("orden-precio"));
+
+  renderizarListadoPaquetes({ paquetes: paquetesOrdenados });
+}
+
+function ordenarPaquetesPorPrecio(paquetes, parametro) {
+  if (!parametro) return paquetes;
+
+  const orden = {
+    ascendente: (a, b) => parseFloat(a.precio) > parseFloat(b.precio),
+    descendente: (a, b) => parseFloat(a.precio) < parseFloat(b.precio)
+  }
+
+  const paquetesOrdenados = [...paquetes];
+  const ordenarPrecioCB = orden[parametro];
+  
+  return paquetesOrdenados.sort(ordenarPrecioCB);
 }
 
 function filtrarPaquetes(item, formData) {
