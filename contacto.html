@@ -41,22 +41,22 @@
   <main class="main-root">
     <div class="main-container">
       <section class="contact-form">
-        <form id="form" data-type="contacto">
+        <form id="form" data-type="contacto" action="https://formspree.io/f/mvoywpdp" method="POST">
           <h2>Envianos tu mensaje</h2>
-          <input type="text" name="nombre" placeholder="Nombre" id="nombre" maxlength="255" required>
+          <input type="text" name="nombre" placeholder="Nombre" id="nombre" maxlength="255">
             <br><br>
-          <input type="text" name="apellido" placeholder="Apellido" id="apellido" maxlength="255" required>
+          <input type="text" name="apellido" placeholder="Apellido" id="apellido" maxlength="255">
             <br><br>
-          <input type="email" name="email" placeholder="Email" id="email" maxlength="255" required>
+          <input type="email" name="email" placeholder="Email" id="email" maxlength="255">
             <br><br>
-          <input type="text" name="lugar" placeholder="País" id="lugar" maxlength="255" required>
+          <input type="text" name="lugar" placeholder="País" id="lugar" maxlength="255">
             <br><br>
           <input type="text" name="telefono" placeholder="Teléfono" id="telefono" maxlength="255">
             <br><br>
-          <textarea name="consulta" placeholder="Escriba aquí su consulta" id="consulta" maxlength="1020" required></textarea>
+          <textarea name="consulta" placeholder="Escriba aquí su consulta" id="consulta" maxlength="1020"></textarea>
             <br><br>
           <input type="submit" value="Enviar" id="submit-boton">
-        </form> 
+        </form>
       </section>
     </div>
   </main>
@@ -74,5 +74,6 @@
     </div>
   </footer>
   <script src="JS/formularios-page.js" type="module"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
