@@ -1,4 +1,5 @@
 import { PaqueteCard } from "./componentes/PaqueteCard.js";
+import { renderizarMensaje } from "./mensaje.js";
 
 async function inicializarListadoPaquetes(data) {
   renderizarListadoPaquetes(data);
@@ -10,8 +11,9 @@ function renderizarListadoPaquetes(listadoPaquetes) {
   let { paquetes } = listadoPaquetes;
 
   if (paquetes.length === 0) {
-    renderizarMensaje("NO SE HAN ENCONTRADO PAQUETES");
+    renderizarMensaje("No se han encontrado paquetes.");
   } else {
+    renderizarMensaje();
     paquetes.forEach(paquete => renderizarPaquete(paquete))
   }
 }
@@ -23,18 +25,6 @@ function renderizarPaquete(dataPaquete) {
   const paqueteElementoCard = paqueteMapeado.crearElemento();
   
   elementoContenedor.appendChild(paqueteElementoCard);
-}
-
-// mover a otro archivo (?)
-export function renderizarMensaje(texto) {
-  const elementoMensaje = document.getElementById("mensaje");
-  elementoMensaje.textContent = texto;
-
-  if (texto) {
-    elementoMensaje.style.display = "flex";
-  } else {
-    elementoMensaje.style.display = "none";
-  }
 }
 
 function eliminarListadoPaquetes() {

@@ -4,12 +4,18 @@ import { agregarALocalStorage } from "../storage/local-storage.js";
 import { filtrarItems } from "../utils/filtros-mappers.js";
 import { modalHandler } from "./modal.js";
 import { actualizarContadorCarrito } from "./botonCarrito.js";
+import { renderizarMensaje } from "./mensaje.js";
 
 async function inicializarPaquete(id) {
   const data = await obtenerDataDeJSON();
   const [paqueteData] = filtrarItems(data.paquetes, "id", id);
-  
-  renderizarDetallesPaquete(paqueteData);
+
+  if (paqueteData) {
+    renderizarMensaje();
+    renderizarDetallesPaquete(paqueteData);
+  } else {
+    renderizarMensaje("No se ha encontrado ningún paquete. Vuelva a intentar en otro momento.");
+  }
 }
 
 function renderizarDetallesPaquete(dataPaquete) {
