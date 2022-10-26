@@ -1212,6 +1212,21 @@ input[type=radio] {
 }
 
 
+/* ---- SWEET ALERT ---- */
+/* -- BOTON -- */
+.swal2-styled.swal2-confirm {
+  background-color: var(--color-cuaternary) !important;
+}
+
+.swal2-icon.swal2-error {
+  border-color: var(--color-cuaternary) !important;
+  color: var(--color-cuaternary) !important;
+}
+.swal2-icon.swal2-error span span {
+  background-color: var(--color-cuaternary) !important;
+}
+
+
 /* ---- MEDIA QUERIES ---- */
 @media (max-width: 1200px) {
   /* ---- PÄQUETES ---- */
