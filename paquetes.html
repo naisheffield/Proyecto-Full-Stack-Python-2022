@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/523c5c29a5.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="Multimedia/favicon_globo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css">
-    <title>Paquetes</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/523c5c29a5.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="Multimedia/favicon_globo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+  <title>Paquetes</title>
 </head>
 <body>
   <header id="header" class="header-root">
@@ -20,12 +20,12 @@
         <h1>TuriMundo</h1>
       </div>
       <nav class="header-navbar">
-        <a id="inicio" class="header-btn" href="./index.html">Inicio</a>
+        <a id="inicio" class="header-btn" href="index.html">Inicio</a>
         <a class="header-btn" href="paquetes.html">Paquetes</a>
         <a class="header-btn" href="arma-tu-viaje.html">Armá tu viaje</a>
         <a class="header-btn" href="contacto.html">Contacto</a>
         <a class="header-cart-btn" href="checkout.html">
-          <img id="empty-cart-icon" src="Multimedia/carrito-vacio.png" alt="carrito">
+          <i class="fa-solid fa-cart-shopping"></i>
           <div class="header-cart-counter"></div>
         </a>
       </nav>
@@ -41,10 +41,71 @@
   <main class="main-root main-pack-details">
     <div class="main-container">
       <section id="packs-list" class="pack-list-section">
-        <h2>PAQUETES</h2>
+        <div class="filter-container">
+          <form id="filtro" class="filter-form" action="#">
+            <div class="filter-title-container">
+              <h3>Filtros</h3>
+              <label class="filter-label-offer" for="promocion">
+                <span>Mostrar solo promociones</span>
+                <input type="checkbox" name="promocion" id="promocion" value="1">
+              </label>
+            </div>
+            <label class="filter-label" for="duracion">
+              Duración
+              <select class="filter-select" name="duracion" id="duracion">
+                <option value="" selected>Selecciona una opción</option>
+                <option value="7">Hasta 7 días</option>
+                <option value="14">Hasta 14 días</option>
+                <option value="21">Hasta 21 días</option>
+                <option value="28">Hasta 28 días</option>
+              </select>
+            </label>
+            <label class="filter-label" for="continente">
+              Ubicación
+              <select class="filter-select" name="continente" id="continente">
+                <option value="" selected>Selecciona una opción</option>
+                <option value="Norteamérica">Norteamérica y Caribe</option>
+                <option value="Sudamérica">Sudamérica</option>
+                <option value="Europa">Europa</option>
+                <option value="Oceanía">Oceanía</option>
+                <option value="Asia">Asia</option>
+              </select>
+            </label>
+            <label class="filter-label" for="precio">
+              Precio
+              <select class="filter-select" name="precio" id="precio">
+                <option value="" selected>Selecciona una opción</option>
+                <option value="5000">Hasta 5.000US$</option>
+                <option value="7500">Hasta 7.500US$</option>
+                <option value="10000">Hasta 10.000US$</option>
+                <option value="12500">Hasta 12.500US$</option>
+                <option value="15000">Mayor a 15.000US$</option>
+              </select>
+            </label>
+            <label class="filter-label" for="review">
+              Puntaje
+              <select class="filter-select" name="review" id="review">
+                <option value="" selected>Selecciona una opción</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="4.5">4.5+</option>
+              </select>
+            </label>
+            <label class="filter-label" for="orden-precio">
+              Precio
+              <select class="filter-select" name="orden-precio" id="orden-precio">
+                <option value="" selected>Selecciona una opción</option>
+                <option value="ascendente">Menor precio</option>
+                <option value="descendente">Mayor precio</option>
+              </select>
+            </label>
+          </form>
+        </div>
         <div id="grilla-paquetes" class="card-grid-container">
         </div>
-        <div id="mensaje"></div>
+        <div id="mensaje" class="pack-list-message"></div>
       </section>
       <section id="pack-details" class="pack-details-section"></section>
     </div>
@@ -55,13 +116,12 @@
   <footer class="footer-root">
     <div class="footer-container">
       <div class="logo">
-        <img class="header-logo" src="Multimedia/favicon_globo.png" alt="logo">
         <h1>TuriMundo</h1>
       </div>
       <nav class="footer-navbar">
-        <a class="footer-btn" href="https://twitter.com/?lang=es"><i class="fa-brands fa-twitter"></i></a>
-        <a class="footer-btn" href="https://es-la.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-        <a class="footer-btn" href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+        <a class="footer-btn" href="https://twitter.com/?lang=es" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a class="footer-btn" href="https://es-la.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="footer-btn" href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       </nav>
     </div>
   </footer>

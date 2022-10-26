@@ -11,9 +11,9 @@ async function inicializarCarrusel() {
 
 function renderizarCarrusel(listadoPaquetes) {
   let { paquetes } = listadoPaquetes;
-  const paquetesPromocionados = filtrarItems(paquetes, "promocion", "true");
+  const paquetesPromocionados = filtrarItems(paquetes, "promocion", "1");
 
-  if (paquetes.length === 0) {
+  if (paquetesPromocionados.length === 0) {
     // mostrar mensaje de error al cargar promociones.
     // renderizarMensaje("NO SE HAN ENCONTRADO PAQUETES");
   } else {

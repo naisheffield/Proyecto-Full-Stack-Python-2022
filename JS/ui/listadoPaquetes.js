@@ -1,17 +1,19 @@
-import { obtenerDataDeJSON } from "../storage/jsonDataFetching.js";
 import { PaqueteCard } from "./componentes/PaqueteCard.js";
+import { renderizarMensaje } from "./mensaje.js";
 
-async function inicializarListadoPaquetes() {
-  const data = await obtenerDataDeJSON();
+async function inicializarListadoPaquetes(data) {
   renderizarListadoPaquetes(data);
 }
 
 function renderizarListadoPaquetes(listadoPaquetes) {
+  eliminarListadoPaquetes();
+
   let { paquetes } = listadoPaquetes;
 
   if (paquetes.length === 0) {
-    renderizarMensaje("NO SE HAN ENCONTRADO PAQUETES");
+    renderizarMensaje("No se han encontrado paquetes.");
   } else {
+    renderizarMensaje();
     paquetes.forEach(paquete => renderizarPaquete(paquete))
   }
 }
@@ -25,15 +27,11 @@ function renderizarPaquete(dataPaquete) {
   elementoContenedor.appendChild(paqueteElementoCard);
 }
 
-// mover a otro archivo (?)
-export function renderizarMensaje(texto) {
-  const elementoMensaje = document.getElementById("mensaje");
-  elementoMensaje.textContent = texto;
+function eliminarListadoPaquetes() {
+  const grilla = document.getElementById("grilla-paquetes");
 
-  if (texto) {
-    elementoMensaje.style.display = "flex";
-  } else {
-    elementoMensaje.style.display = "none";
+  while (grilla.childElementCount > 0) {
+    grilla.removeChild(grilla.lastElementChild);
   }
 }
 
