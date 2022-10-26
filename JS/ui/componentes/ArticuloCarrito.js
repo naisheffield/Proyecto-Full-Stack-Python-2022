@@ -1,14 +1,15 @@
 class ArticuloCarrito {
   constructor(articuloData, callbackHandler) {
-    this.id = articuloData.id;
-    this.nombre = articuloData.nombre;
-    this.imageURL = articuloData.imagenes[0];
-    this.precio = articuloData.precio;
+    this.callbackHandler = callbackHandler;
     this.cantidad = articuloData.cantidad;
     this.destino = articuloData.destino;
     this.duracion = articuloData.duracion;
+    this.fecha = articuloData.fecha;
+    this.id = articuloData.id;
+    this.imageURL = articuloData.imagenes[0];
+    this.nombre = articuloData.nombre;
+    this.precio = articuloData.precio;
     this.servicios = articuloData.servicios;
-    this.callbackHandler = callbackHandler;
   }
 
   crearElemento() {
@@ -24,20 +25,26 @@ class ArticuloCarrito {
       </div>
       <div class="item-info-container">
         <div class="item-title">
-          <h3>${this.nombre}</h3>
+          <h3>${this.destino.pais} - ${this.fecha.conFormato}</h3>
         </div>
-        <div>
-          <span>${this.cantidad} pasajes</span>
-          <span>${this.precio} US$ + impuestos c/u</span>
+        <div class="item-info">
+          ${this.cantidad} ${this.cantidad > 1 ? 'pasajes' : 'pasaje'} ${this.precio} US$ + impuestos c/u
         </div>
-        <div>
-          <span>${this.destino.ciudad} | ${this.destino.pais} | ${this.destino.continente}</span>
-          <span>${this.duracion.dias} días | ${this.duracion.noches} noches</span>
+        <div class="item-info">
+          ${this.destino.ciudad} | ${this.destino.pais} | ${this.destino.continente}
         </div>
-        <ul>
+        <div class="item-info">
+          ${this.duracion.dias} días | ${this.duracion.noches} noches
+        </div>
+        <hr class="article-separator">
+        <p>Incluye:</p>
+        <ul class="item-info-list">
           ${listadoServicios}
         </ul>
-        <button data-id=${this.id} class="cart-delete-btn">Eliminar</button>
+        <div class="cart-btn-container">
+          <a class="cart-item-btn"  href="promociones.html?id=${this.id}" target="_blank">DETALLES</a>
+          <button data-id=${this.id} class="cart-item-btn cart-delete-btn">ELIMINAR</button>
+        </div>
       </div>
     `;
 

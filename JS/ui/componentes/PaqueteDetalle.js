@@ -108,7 +108,12 @@ class PaqueteDetalle {
               </p>
               <p>
                 <strong>Reseñas:</strong>
-                <span>${this.review.promedio} / 5.00 | ${this.review.cantidad} reseñas</span>
+                <span>
+                ${
+                  this.review.promedio > 4 
+                  ? '<i class="fa-solid fa-star"></i>'
+                  : '<i class="fa-solid fa-star-half-stroke"></i>'
+                }${this.review.promedio} / 5.00 | ${this.review.cantidad} reseñas</span>
               </p>
               <p class="small-note">*Este paquete se encontrará a la venta una semana antes de la fecha de partida.</p>
             </div>
@@ -232,8 +237,14 @@ class PaqueteDetalle {
     tablaPreciosContenedor.className = "pack-details-wrapper";
 
     const titulo = "PRECIOS POR PERSONA";
-    const descuentoPasajeroFrecuente = 500;
-    const precioGastosTasas = Math.ceil(this.precio * 0.25);
+    const formatearMoneda = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD"
+    });
+
+    const precio = formatearMoneda.format(this.precio);
+    const descuentoPasajeroFrecuente = formatearMoneda.format(500);
+    const precioGastosTasas = formatearMoneda.format(Math.ceil(this.precio * 0.25));
 
     tablaPreciosContenedor.innerHTML = `
       <details class="pack-details" open>
@@ -243,15 +254,15 @@ class PaqueteDetalle {
             <tbody>
               <tr class="price-table-row">
                 <td>Precio</td>
-                <td>${this.precio} USD + IVA</td>
+                <td>${precio} + IVA</td>
               </tr>
               <tr class="price-table-row">
                 <td>Descuento "Pasajeros Frecuentes"</td>
-                <td>${descuentoPasajeroFrecuente} USD</td>
+                <td>${descuentoPasajeroFrecuente}</td>
               </tr>
               <tr class="price-table-row">
                 <td>DNT, Tasas(1) y Gastos Administrativos</td>
-                <td>${precioGastosTasas} USD</td>
+                <td>${precioGastosTasas}</td>
               </tr>
             </tbody>
           </table>
@@ -306,8 +317,12 @@ class PaqueteDetalle {
     navegacionContenedor.className = "pack-details-navigation";
 
     navegacionContenedor.innerHTML = `
-      <a href="./paquetes.html" class="pack-btn secondary">VOLVER AL LISTADO</a>
-      <a href="#header" class="pack-btn secondary">VOLVER ARRIBA</a>
+      <a href="./paquetes.html" class="pack-btn secondary">
+        <i class="fa-solid fa-list"></i>
+      </a>
+      <a href="#header" class="pack-btn secondary">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
     `;
 
     return navegacionContenedor;

@@ -1,7 +1,7 @@
 import { obtenerDataDeJSON } from "../storage/jsonDataFetching.js";
 import { ArticuloCarrito } from "./componentes/ArticuloCarrito.js";
 import { obtenerItemsLocalStorage, eliminarItemLocalStorage } from "../storage/local-storage.js";
-import { renderizarMensaje } from "./listadoPaquetes.js";
+import { renderizarMensaje } from "./mensaje.js";
 import { calcularCosto } from "../utils/calcularCosto.js";
 import { mapearArticulosConCantidad, mapearArticulosConCosto } from "../utils/filtros-mappers.js";
 
@@ -50,6 +50,10 @@ function renderizarArticulosCarrito(dataArticulos) {
 
 function renderizarDetalleCheckout(articulosConCosto, costoTotal) {
   const { costo, impuestos } = costoTotal;
+  const formatearMoneda = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD"
+  });
 
   const listadoArticulos = document.getElementById("articulos-listado");
   const subtotalElemento = document.getElementById("costo-subtotal");
@@ -62,15 +66,15 @@ function renderizarDetalleCheckout(articulosConCosto, costoTotal) {
   
     articuloElemento.innerHTML = `
       <span>${articulo.nombre}</span>
-      <span>${articulo.cantidad} x ${articulo.precio},00 US$</span>
+      <span>${articulo.cantidad} x ${formatearMoneda.format(articulo.precio)}</span>
     `;
 
     listadoArticulos.appendChild(articuloElemento);
   })
 
-  subtotalElemento.textContent = `${costo},00 US$`;
-  impuestosElemento.textContent = `${impuestos},00 US$`;
-  totalElemento.textContent = `${costo + impuestos},00 US$`;
+  subtotalElemento.textContent = formatearMoneda.format(costo);
+  impuestosElemento.textContent = formatearMoneda.format(impuestos);
+  totalElemento.textContent = formatearMoneda.format(costo + impuestos);
 };
 
 function eliminarArticulosCarrito() {
