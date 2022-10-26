@@ -2,16 +2,13 @@ import { renderizarListadoPaquetes } from "../ui/listadoPaquetes.js";
 
 function inicializarFiltroPequetes(data) {
   const filtro = document.getElementById("filtro");
-
+  filtro.reset();
   filtro.addEventListener("change", (e) => filtroHandler(e, data));
 }
 
 function filtroHandler(e, data) {
-  e.preventDefault();
-
   let { paquetes } = data;
-  const filtro = document.getElementById("filtro");
-  const parametros = new FormData(filtro);
+  const parametros = new FormData(e.target.form);
 
   const paquetesFiltrados = paquetes.filter(paquete => filtrarPaquetes(paquete, parametros));
   const paquetesOrdenados = ordenarPaquetesPorPrecio(paquetesFiltrados, parametros.get("orden-precio"));
@@ -25,47 +22,36 @@ function ordenarPaquetesPorPrecio(paquetes, parametro) {
   const orden = {
     ascendente: (a, b) => parseFloat(a.precio) > parseFloat(b.precio),
     descendente: (a, b) => parseFloat(a.precio) < parseFloat(b.precio)
-  }
-
-  const paquetesOrdenados = [...paquetes];
+  };
   const ordenarPrecioCB = orden[parametro];
   
-  return paquetesOrdenados.sort(ordenarPrecioCB);
+  return [...paquetes].sort(ordenarPrecioCB);
 }
 
 function filtrarPaquetes(item, formData) {
   return (
-    validarUbicacion(item, formData.get("continente"))
-    && validarDuracion(item, formData.get("duracion"))
-    && validarReview(item, formData.get("review"))
-    && validarPrecio(item, formData.get("precio"))
-    && validarPromocion(item, formData.get("promocion"))
+    validarIgualValor(item.destino.continente, formData.get("continente"))
+    && validarMenorValor(item.duracion.total, formData.get("duracion"))
+    && validarMayorValor(item.review.promedio, formData.get("review"))
+    && validarMenorValor(item.precio, formData.get("precio"))
+    && validarIgualValor(item.promocion, formData.get("promocion"))
   );
 }
 
-function validarUbicacion(item, valor) {
-  if (valor === "") return true;
-  return item.destino.continente === valor;
+function validarCampoVacio(valor) {
+  return (valor === null || valor === "");
 }
 
-function validarDuracion(item, valor) {
-  if (valor === "") return true;
-  return parseInt(item.duracion.total) <= parseInt(valor);
+function validarMenorValor(itemValor, formValue) {
+  return validarCampoVacio(formValue) || (Number(itemValor) <= Number(formValue));
 }
 
-function validarReview(item, valor) {
-  if (valor === "") return true;
-  return parseFloat(item.review.promedio) >= parseFloat(valor);
+function validarMayorValor(itemValor, formValue) {
+  return validarCampoVacio(formValue) || (Number(itemValor) >= Number(formValue));
 }
 
-function validarPrecio(item, valor) {
-  if (valor === "") return true;
-  return parseInt(item.precio) <= parseInt(valor);
-}
-
-function validarPromocion(item, valor) {
-  if (valor === null) return true;
-  return item.promocion === valor;
+function validarIgualValor(itemValor, formValue) {
+  return validarCampoVacio(formValue) || (itemValor === formValue);
 }
 
 export { inicializarFiltroPequetes };
