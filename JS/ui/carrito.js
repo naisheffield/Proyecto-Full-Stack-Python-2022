@@ -18,7 +18,7 @@ function actualizarCarrito(data) {
   if (articulosEnCarrito === null) {
     renderizarMensaje("No hay artículos en el Carrito.");
     renderizarDetalleCheckout([], { costo: 0, impuestos: 0 });
-    botonCajaHandler("El carrito se encuentra vacío!", false);
+    botonCajaHandler("Carrito vacío", "Prueba agregando algún paquete.", "error");
     return;
   }
 
@@ -28,7 +28,7 @@ function actualizarCarrito(data) {
   
   renderizarArticulosCarrito(dataArticulosEnCarrito);
   renderizarDetalleCheckout(articulosConCosto, costoTotal);
-  botonCajaHandler("Gracias por su compra!", true);
+  botonCajaHandler("Gracias por su compra!", "Les deseamos una hermosa experiencia.", "success");
 }
 
 function renderizarArticulosCarrito(dataArticulos) {
@@ -85,19 +85,23 @@ function eliminarArticulosCarrito() {
   }
 }
 
-function botonCajaHandler(mensaje, compraSatisfactoria) {
+function botonCajaHandler(titulo, mensaje, compraSatisfactoria) {
   const boton = document.querySelector(".cart-sidebar-btn");
   
   boton.addEventListener("click", () => {
-    renderizarMensaje(mensaje);
+    Swal.fire({
+      title: titulo,
+      text: mensaje,
+      icon: compraSatisfactoria
+    });
 
-    if (compraSatisfactoria) {
+    if (compraSatisfactoria === "success") {
       eliminarArticulosCarrito();
       localStorage.clear();
 
       setTimeout(() => {
         window.location.reload();
-      }, 4000);
+      }, 5000);
     }
   })
 }

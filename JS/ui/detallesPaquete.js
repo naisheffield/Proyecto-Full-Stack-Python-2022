@@ -30,6 +30,17 @@ function renderizarDetallesPaquete(dataPaquete) {
 
     agregarALocalStorage(paquete);
     actualizarContadorCarrito();
+
+    Swal.fire({
+      title: "Agregado al carrito",
+      text: `${dataPaquete.nombre} se ha agregado al carrito de compras.`,
+      icon: "success",
+      buttons: {
+          confirm: {
+            className: "sweet-alert-btn",
+          }
+        }
+    });
   }
 
   const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB, modalHandler);
