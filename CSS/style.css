@@ -14,7 +14,6 @@
   /* -- Theme Color Scheme -- */
   --color-primary: rgb(100, 147, 205);
   --color-secondary: rgb(48, 79, 129);
-  /* --color-secondary: rgba(124, 152, 197, 0.92); */
   --color-tertiary: rgb(180, 180, 180);
   --color-cuaternary: rgb(255, 79, 47);
 }
@@ -33,16 +32,7 @@ body {
 
 /* ---- HEADER STYLES ---- */
 .header-root {
-  /* border-bottom: 1px solid var(--color-secondary);
-  display: flex;
-  height: var(--header-height);
-  justify-content: center;
   background-color: var(--color-secondary);
-  font-weight: bold; */
-
-  /* background-color: rgba(26, 60, 113, 0.92); */
-  background-color: var(--color-secondary);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.92);
   color: white;
   display: flex;
   font-weight: bold;
@@ -55,7 +45,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0 1.5rem;
-  max-width: var(--container-max-width); /* checkear el width con media-queries */
+  max-width: var(--container-max-width);
   width: 90%;
 }
 
@@ -73,13 +63,6 @@ body {
 }
 
 .header-btn {
-  /* align-items: center;
-  display: flex;
-  padding: 0 0.7rem;
-  text-decoration: none;
-  border-radius: 5px;
-  color: black; */
-
   align-items: center;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -105,19 +88,6 @@ body {
 }
 
 .header-cart-btn {
-  /* align-items: center;
-  background-color: transparent;
-  border: 1px solid gray;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  height: 36px;
-  justify-content: center;
-  padding: 4px;
-  position: relative;
-  transition: 0.1s;
-  width: 36px; */
-
   align-items: center;
   background-color: transparent;
   border-radius: 50%;
@@ -148,10 +118,6 @@ body {
 }
 
 .header-cart-btn img {
-  /* max-width: 70%;
-  height: auto;
-  transition: 0.2s; */
-
   filter: invert();
   height: auto;
   max-width: 60%;
@@ -209,17 +175,6 @@ body {
 
 /* ---- MAIN STYLES ---- */
 .pack-list-message {
-  /* display: none;
-  align-items: center;
-  border-radius: 24px;
-  border: 2px dashed lightgray;
-  display: flex;
-  font-size: 1.5rem;
-  justify-content: center;
-  min-height: 240px;
-  padding: 2rem;
-  text-align: center; */
-
   align-items: center;
   border-radius: 12px;
   border: 2px dashed lightgray;
@@ -234,15 +189,9 @@ body {
 
 /* ---- HOME-SLIDER STYLES ---- */
 .home-slider{
-    /* width: 100%;
-    max-width: 120em; */
     background-color: whitesmoke;
-    /* margin: 1% 0 0 0;
-    padding: 0; */
-    overflow-x: hidden; /*Para que no pegue el salto al mover el slide*/
+    overflow-x: hidden;
     border-radius: 24px;
-    /* box-shadow: 0 0 0 5px whitesmoke,
-                0 5px 5px; */
     position: relative;
 }
 
@@ -261,11 +210,11 @@ body {
   width: 500%;
 
   transition: all .5s ease;
-  transform: translateX(0%); /* Posición inicial del carrusel */
+  transform: translateX(0%);
 }
 
 .home-slider .slide-image {
-  min-height: 500px; /* 400px; Chequear altura con el tamaño de fuente final */
+  min-height: 500px;
   width: 100%;
   height: 100%;
   display: block;
@@ -383,6 +332,24 @@ body {
   width: 100%;
 }
 
+.home-info-location {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.home-info-location .packages-info {
+  width: 49%;
+}
+.home-info-location figure {
+  margin: 0;
+  width: 49%;
+  border-radius: 8px;
+  border: 1px solid lightgray;
+}
+.home-info-location iframe {
+  border-radius: 8px;
+}
+
 .home-title {
   color: var(--color-secondary);
   font-size: 2.2rem;
@@ -392,10 +359,8 @@ body {
 }
 
 .packages-info {
-  align-items: center;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
   width: 100%;
 }
 .packages-info h3 {
@@ -499,23 +464,6 @@ blockquote cite {
   margin-top: 1rem;
 }
 
-/* .home-info, .home-contact{
-  border-radius: 8px;
-  box-shadow: 0 0 0 5px whitesmoke,
-              0 5px 5px;
-  width: 100%;
-} */
-
-/* .packages-info {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
-  background-color:  var(--color-primary);
-  font-weight: bold;
-  width: 100%;
-} */
-
 /* ---- FOOTER STYLES ---- */
 .footer-root {
   background-color: var(--color-secondary);
@@ -535,7 +483,7 @@ blockquote cite {
   display: flex;
   justify-content: space-between;
   margin: 0 1rem;
-  max-width: var(--container-max-width); /* checkear el width con media-queries */
+  max-width: var(--container-max-width);
   width: 90%;
 }
 .footer-container span {
@@ -577,11 +525,6 @@ blockquote cite {
   border: 1px solid #cecece;
   border-radius: 24px;
 }
-
-/* .main-pack-details { */
-  /* background-color: #f1f2f5; */
-  /* padding: 3rem 0; */
-/* } */
 
 .pack-list-section {
   display: block;
@@ -942,8 +885,7 @@ blockquote cite {
 .card-grid-container {
   display: grid;
   gap: 1.3333%;
-  grid-template-columns: 24% 24% 24% 24%; /* Settear las columnas con media-queries */
-  /* grid-column: auto; */
+  grid-template-columns: 24% 24% 24% 24%;
 }
 
 /* ---- PAQUETES - CARD ---- */
@@ -959,7 +901,7 @@ blockquote cite {
   max-width: 400px;
   text-decoration: none;
   transition: 0.30s;
-  width: -webkit-fill-available; /* Verificar la implementacion de multiples vendedores */
+  width: -webkit-fill-available;
   width: -moz-available;
 }
 
@@ -975,7 +917,7 @@ blockquote cite {
   justify-content: center;
   margin-bottom: 1rem;
   overflow: hidden;
-  padding-bottom: 70%; /* Verificar la implementacion con imagenes con diferentes size-ratios */
+  padding-bottom: 70%;
   position: relative;
 }
 
@@ -1123,7 +1065,7 @@ blockquote cite {
 }
 
 .cart-sidebar-btn {
-  background-color: var(--color-cuaternary); /* Cambiar por color principal */
+  background-color: var(--color-cuaternary);
   border-radius: 10px;
   border: none;
   color: white;
@@ -1210,74 +1152,74 @@ blockquote cite {
 }
 
 /* ---- PÁGINA DE CONTACTO ---- */
-/* Este conentedor coliciona con los estilos del form de la página paquetes */
 .contact-form {
-  max-width: 450px;
-  margin: auto;
-  padding: 10px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 18px;
   box-sizing: border-box;
   margin-top: 20px;
-  border-radius: 7px;
-  background-color: aliceblue;
+  margin: auto;
+  max-width: 450px;
+  padding: 1rem;
 }
 
-h2{
+.contact-form h2{
   text-align: center;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 7px;
+.contact-form input, textarea {
+  border-radius: 4px;
+  border: 1px solid var(--color-primary);
   box-sizing: border-box;
-  font-size: 14px;
-}
-
-textarea {
-  min-height: 100px;
-  max-height: 200px;
-  max-width: 100%;
-}
-
-#boton {
-  background-color:var(--color-primary);
-  color: white;
-  padding: 20px;
   font-size: 15px;
+  font-weight: 400;
+  height: 42px;
+  margin: 8px 0;
+  outline: none;
+  padding: 0 15px;
+  width: 100%;
 }
 
-#boton:hover {
-  cursor: pointer;
-  background-color:var(--color-secondary);
+.contact-form textarea {
+  min-height: 200px;
+  max-height: 400px;
+  max-width: 100%;
+  padding: 1rem;
 }
 
 /* ---- PÁGINA DE ARMÁ TU VIAJE ---- */
-.main-container-travel{
+.main-container-travel {
   position:relative;
   max-width: 900px;
   width: 100%;
   border-radius: 6px;
-  padding: 30px;
+  padding: 2rem 0 4rem 0;
   margin: 0 5px 10px;
 }
 
 .main-container-travel form{
   position:relative;
-  margin-top: 16px;
   min-height: 490px;
-  background-color: aliceblue;
-  border-radius: 1% ;
-  padding: 10px;
-
+  background-color: white;
+  border-radius: 18px;
+  padding: 1rem;
+  border: 1px solid lightgray;
 }
 
-.main-container-travel form .titulo{
+.main-container-travel h2 {
+  text-align: center;
+}
+
+.main-container-travel form .titulo {
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  color: white;
   display: block;
-  margin-bottom: 8px;
   font-size: 16px;
-  font-weight: 500;
-  margin: 6px 0;
-  background-color: var(--color-secondary);
   font-weight: 600;
+  margin-bottom: 8px;
+  margin: 6px 0;
+  padding: 0.5rem;
 }
 
 .main-container-travel .fields{
@@ -1311,10 +1253,11 @@ form .fields .input-field{
   font-size: 15px;
   font-style: italic;
   font-weight: 400;
-  border: 1px solid;
   padding: 0 15px;
   height: 42px;
   margin: 8px 0;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
 }
 
 .input-field select {
@@ -1330,6 +1273,29 @@ input[type=radio] {
   border: 0px;
   width:20% ;
   height: 15px;
+}
+
+.input-submit {
+  display: flex;
+  justify-content: center;
+}
+
+#submit-boton {
+  background-color: var(--color-cuaternary);
+  border-radius: 12px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: auto;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  transition: 0.2s;
+  width: 14rem;
+}
+#submit-boton:hover {
+  filter: brightness(1.25);
 }
 
 
@@ -1580,6 +1546,19 @@ input[type=radio] {
   .item-title {
     flex-direction: column;
   }
+
+  
+  .home-info-location {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .home-info-location .packages-info {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .home-info-location figure {
+    width: 100%;
+  }
 }
 
 @media (max-width: 540px) {
@@ -1658,7 +1637,7 @@ input[type=radio] {
     width: 100%;
   }
 
-  .logo h1 {
+  .header-root .logo h1 {
     display: none;
   }
   .header-logo {
@@ -1689,5 +1668,14 @@ input[type=radio] {
 
   .slide-btn.navigation {
     top: 90%;
+  }
+
+  /* -- FORMS -- */
+  form .fields .input-field {
+    width: 100%;
+  }
+
+  #submit-boton {
+    width: 100%;
   }
 }
