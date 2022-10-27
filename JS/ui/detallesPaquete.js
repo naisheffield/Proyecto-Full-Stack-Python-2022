@@ -2,9 +2,9 @@ import { PaqueteDetalle } from "./componentes/PaqueteDetalle.js";
 import { obtenerDataDeJSON } from "../storage/jsonDataFetching.js";
 import { agregarALocalStorage } from "../storage/local-storage.js";
 import { filtrarItems } from "../utils/filtros-mappers.js";
-import { modalHandler } from "./modal.js";
 import { actualizarContadorCarrito } from "./botonCarrito.js";
 import { renderizarMensaje } from "./mensaje.js";
+import { modalHandler } from "./modal.js";
 
 async function inicializarPaquete(id) {
   const data = await obtenerDataDeJSON();
@@ -34,12 +34,7 @@ function renderizarDetallesPaquete(dataPaquete) {
     Swal.fire({
       title: "Agregado al carrito",
       text: `${dataPaquete.nombre} se ha agregado al carrito de compras.`,
-      icon: "success",
-      buttons: {
-          confirm: {
-            className: "sweet-alert-btn",
-          }
-        }
+      icon: "success"
     });
   }
 
