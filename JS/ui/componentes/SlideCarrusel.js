@@ -22,12 +22,7 @@ class SlideCarrusel {
         <a href="promociones.html?id=${this.id}" class="slide-btn-details" target="_blank">VER DETALLES</a>
       </div>
       <img class="slide-image" src="Multimedia/imagenes/${this.id}.jpg" alt="${this.destino.pais}-picture">  
-      `;
-
-      // Cargar imagenes de una URL ralentiza el renderizado y animacion de las slides durante
-      // la primera pasada (cuando las imagenes se renderizan), por lo que se prefiere usar
-      // imagenes en rutas locales.
-      // <img class="slide-image" src="${this.imageURL[0]}" alt="${this.destino.pais}-picture">  
+    `;
 
     return elementoContenedor;
   }
