@@ -4,13 +4,11 @@ const MIN_CHAR = 0;
 const MONTO_MIN = 1;
 const MONTO_MAX = 100000000;
 const EMAIL_REGEX = /^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|ar|edu)+$/;
-const PAIS_REGEX = /^\s+$/;
 
 // Helper-functions para validaciones.
 const validarCaracteresMinimos = string => (string.length <= MIN_CHAR || string === null);
 const validarCaracteresMaximos = (string, max = MAX_CHAR) => string.length > max;
 const validarFormatoEmail = email => !(EMAIL_REGEX.test(email));
-const validarFormatoLugar = pais => !(PAIS_REGEX.test(pais));
 
 // Validacion de campos.
 const validarNombre = () => {
@@ -60,7 +58,7 @@ const validarEmail = () => {
 
 const validarNombreLugar = () => {
   const lugar = document.getElementById("lugar").value;
-  if(validarCaracteresMinimos(lugar) || validarFormatoLugar(lugar)) {
+  if(validarCaracteresMinimos(lugar)) {
     alert("Debe escribir el país");
     return false;
   }
@@ -151,7 +149,6 @@ const validarPresupuesto = () => {
 
   return true;
 }
-
 
 function validacionContacto() {
   return (
